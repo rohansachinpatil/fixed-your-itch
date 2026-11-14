@@ -600,79 +600,92 @@
       .map(function (r) { return '<div><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + '</span></div>'; }).join("");
 
     view.innerHTML =
-      '<a class="back-link" href="#/" data-back>← All ' + DATA.problems.length + ' problems</a>' +
-      '<div class="brief-head">' +
-        '<div>' +
+      '<div class="brief-top-bar">' +
+        '<a class="back-link" href="#/" data-back>← Back to Ledger (All ' + DATA.problems.length + ' Problems)</a>' +
+        '<div class="brief-top-actions">' +
+          '<button type="button" class="action-btn" data-copy>🔗 Copy Share Link</button>' +
+          '<button type="button" class="action-btn primary" data-copy-brief>📋 Copy Full Brief</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="brief-hero-stamp st ' + (p.source === 'editorial' ? 'wt' : 'bl') + '">' +
+        '<div class="brief-hero-stamp-inner">' +
           '<div class="brief-kicker">' +
-            '<span>Rank ' + rankLabel(p.rank) + ' of ' + DATA.problems.length + '</span>' +
-            '<span class="dot"></span><span>' + esc(p.category) + '</span>' +
-            '<span class="dot"></span><span>' + esc(sourceLabel(p)) + '</span>' +
-            '<span class="dot"></span><span>' + esc(scoreName(p)) + ' ' + fmt(rating) + '</span>' +
+            '<span class="kicker-pill">Rank ' + rankLabel(p.rank) + '</span>' +
+            '<span class="kicker-tag">' + esc(p.category) + '</span>' +
+            '<span class="kicker-source">' + esc(sourceLabel(p)) + '</span>' +
           '</div>' +
-          '<h1 class="brief-title">' + esc(p.title) + '</h1>' +
-          '<div class="brief-startup">' +
-            '<span class="label">The startup</span>' +
-            '<strong>' + esc(p.startup) + '</strong>' +
-            '<p>' + esc(p.pitch) + '</p>' +
+          '<div class="brief-hero-flex">' +
+            '<div class="brief-hero-left">' +
+              '<span class="brief-hero-pre">THE STARTUP BLUEPRINT</span>' +
+              '<h1 class="brief-startup-hero">' + esc(p.startup) + '</h1>' +
+              '<p class="brief-pitch-hero">' + esc(p.pitch) + '</p>' +
+            '</div>' +
+            '<div class="brief-hero-score-badge">' +
+              '<span class="score-badge-label">' + esc(scoreName(p)) + '</span>' +
+              '<span class="score-badge-val">' + fmt(rating) + '</span>' +
+              '<span class="score-badge-max">/ 100</span>' +
+            '</div>' +
           '</div>' +
         '</div>' +
-        '<aside class="brief-score" aria-label="Rating">' +
-          '<span class="score-label">' + esc(scoreName(p)) + '</span>' +
-          '<div class="score-value"><b>' + fmt(rating) + '</b><span>/ 100</span></div>' +
+      '</div>' +
+      '<div class="brief-head">' +
+        '<div>' +
+          '<span class="brief-label-sm">THE VERIFIED PROBLEM STATEMENT</span>' +
+          '<h2 class="brief-problem-title">' + esc(p.title) + '</h2>' +
+        '</div>' +
+        '<aside class="brief-score-card" aria-label="Itch Score Overview">' +
+          '<div class="score-card-header">' +
+            '<span class="score-label">' + esc(scoreName(p)) + '</span>' +
+            '<span class="score-val-huge">' + fmt(rating) + '</span>' +
+          '</div>' +
           '<div class="score-bar"><i style="width:' + Math.max(0, Math.min(100, rating)) + '%"></i></div>' +
           '<p class="score-note">' + (p.source === "platform"
-            ? "Published Fix My Itch rating. Sub-scores: severity, TAM, whitespace, frequency."
-            : "Weighted founder score: pain 30 %, market 20 %, timing 15 %, feasibility 15 %, moat 10 %, revenue 10 %.") + '</p>' +
+            ? "Published Fix My Itch rating. Analyzed across severity, market size, whitespace and frequency."
+            : "Weighted founder score: pain 30%, market 20%, timing 15%, feasibility 15%, moat 10%, revenue 10%.") + '</p>' +
         '</aside>' +
       '</div>' +
       '<div class="brief-body">' +
         '<aside class="brief-aside" aria-label="Signals and market">' +
-          (signals ? '<div class="aside-block"><span class="aside-label">Signals</span>' + signals + '</div>' : '') +
-          (marketRows ? '<div class="aside-block"><span class="aside-label">At a glance</span><div class="aside-market">' + marketRows + '</div></div>' : '') +
-          (tags ? '<div class="aside-block"><span class="aside-label">Tags</span><div class="aside-tags">' + tags + '</div></div>' : '') +
-          '<div class="aside-block">' +
-            '<div class="aside-actions">' +
-              '<button type="button" data-copy>Copy link</button>' +
-              '<button type="button" data-copy-brief>Copy brief as text</button>' +
-            '</div>' +
-          '</div>' +
+          (signals ? '<div class="aside-block"><span class="aside-label">Validation Signals</span>' + signals + '</div>' : '') +
+          (marketRows ? '<div class="aside-block"><span class="aside-label">Opportunity Specs</span><div class="aside-market">' + marketRows + '</div></div>' : '') +
+          (tags ? '<div class="aside-block"><span class="aside-label">Sectors &amp; Tags</span><div class="aside-tags">' + tags + '</div></div>' : '') +
         '</aside>' +
         '<article class="brief-body-main">' +
           '<section class="brief-section"><h2>The problem <span class="num">01</span></h2>' +
             '<p class="prose">' + esc(p.description) + '</p>' +
-            (p.who ? '<p class="who-line"><strong>Who feels it:</strong> ' + esc(p.who) + '</p>' : '') +
+            (p.who ? '<div class="who-box"><strong>Target Audience / Who feels it:</strong> <p>' + esc(p.who) + '</p></div>' : '') +
           '</section>' +
-          '<section class="brief-section"><h2>How you build it <span class="num">02</span></h2>' +
+          '<section class="brief-section"><h2>Technical build blueprint <span class="num">02</span></h2>' +
             '<div class="steps">' + p.solution.how.map(function (s) {
               return '<div class="step"><p>' + esc(s) + '</p></div>';
             }).join("") + '</div>' +
           '</section>' +
-          '<section class="brief-section"><h2>The first version <span class="num">03</span></h2>' +
+          '<section class="brief-section"><h2>The first version (MVP Roadmap) <span class="num">03</span></h2>' +
             '<ul class="mvp-list">' + p.solution.mvp.map(function (s) {
               return '<li>' + esc(s) + '</li>';
             }).join("") + '</ul>' +
           '</section>' +
-          '<section class="brief-section"><h2>How it makes money <span class="num">04</span></h2>' +
+          '<section class="brief-section"><h2>Business model &amp; economics <span class="num">04</span></h2>' +
             '<div class="model-grid">' +
-              '<div class="model-cell"><span class="label">Model</span><p>' + esc(p.solution.model) + '</p></div>' +
-              '<div class="model-cell price"><span class="label">Price</span><p>' + esc(p.solution.price) + '</p></div>' +
-              '<div class="model-cell"><span class="label">Go to market</span><p>' + esc(p.solution.gtm) + '</p></div>' +
-              '<div class="model-cell"><span class="label">Moat</span><p>' + esc(p.solution.moat) + '</p></div>' +
+              '<div class="model-cell"><span class="label">Revenue Model</span><p>' + esc(p.solution.model) + '</p></div>' +
+              '<div class="model-cell price"><span class="label">Recommended Pricing</span><p>' + esc(p.solution.price) + '</p></div>' +
+              '<div class="model-cell"><span class="label">Go To Market Strategy</span><p>' + esc(p.solution.gtm) + '</p></div>' +
+              '<div class="model-cell"><span class="label">Defensibility &amp; Moat</span><p>' + esc(p.solution.moat) + '</p></div>' +
             '</div>' +
           '</section>' +
-          '<section class="brief-section"><h2>What can go wrong <span class="num">05</span></h2>' +
+          '<section class="brief-section"><h2>Vulnerabilities &amp; What can kill it <span class="num">05</span></h2>' +
             '<div class="risk-list">' + p.risks.map(function (r) {
               return '<div>' + esc(r) + '</div>';
             }).join("") + '</div>' +
           '</section>' +
-          '<section class="brief-section"><h2>The verdict <span class="num">06</span></h2>' +
+          '<section class="brief-section"><h2>The founder verdict <span class="num">06</span></h2>' +
             '<blockquote class="verdict">' + esc(p.verdict) + '</blockquote>' +
           '</section>' +
         '</article>' +
       '</div>' +
       navHtml(prev, next) +
-      '<p class="brief-disclaimer">Problem &amp; itch score: Fix My Itch by Razorpay. Not affiliated with Razorpay. ' +
-        'Startup concept, build plan, pricing, risks and market notes: independent analysis by ' +
+      '<p class="brief-disclaimer">Problem statement &amp; itch score: Fix My Itch by Razorpay. Not affiliated with Razorpay Software Pvt. Ltd. ' +
+        'Startup blueprint, MVP roadmap, architecture, pricing and risk analysis: independent founder analysis by ' +
         '<a href="https://github.com/rohansachinpatil" target="_blank" rel="noopener noreferrer">rohansachinpatil</a>. ' +
         'Not investment advice.</p>';
 
