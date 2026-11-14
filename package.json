@@ -1,0 +1,18 @@
+{
+  "name": "fixed-your-itch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FIXED your ITCH — 143 startup blueprints built on every problem from Razorpay's Fix My Itch.",
+  "author": "Rohan Sachin Patil (https://github.com/rohansachinpatil)",
+  "license": "MIT",
+  "scripts": {
+    "serve": "node scripts/serve.js",
+    "scrape": "node scripts/scrape.js",
+    "build:data": "node scripts/build-dataset.js",
+    "build:sitemap": "node scripts/generate-sitemap.js",
+    "build": "npm run build:data && npm run build:sitemap"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "FIXED your ITCH",
+  "short_name": "FIXED ITCH",
+  "description": "143 startup blueprints built on every problem from Razorpay's Fix My Itch.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "share": {
+    "title": "FIXED your ITCH",
+    "text": "143 startup blueprints for India's real problems.",
+    "url": "/"
+  }
+}

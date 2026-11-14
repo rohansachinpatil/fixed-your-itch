@@ -18,13 +18,18 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/site.webmanifest",
+      "headers": { "Content-Type": "application/manifest+json; charset=utf-8", "Cache-Control": "public, max-age=86400" },
+      "dest": "/site.webmanifest"
+    },
+    {
       "src": "/assets/(.*)",
-      "headers": { "Cache-Control": "public, max-age=31536000, immutable" },
+      "headers": { "Cache-Control": "public, max-age=0, must-revalidate" },
       "dest": "/assets/$1"
     },
     {
       "src": "/data/(.*)",
-      "headers": { "Cache-Control": "public, max-age=86400" },
+      "headers": { "Cache-Control": "public, max-age=0, must-revalidate" },
       "dest": "/data/$1"
     },
     {
@@ -39,9 +44,13 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
+        }
       ]
     }
   ]

@@ -15,7 +15,9 @@
 
   <!-- Canonical -->
   <link rel="canonical" href="https://fixed-your-itch.vercel.app/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a1a'/%3E%3Crect x='18' y='18' width='10' height='10' fill='%232f55f4'/%3E%3Crect x='4' y='4' width='10' height='10' fill='%23f4f4f2'/%3E%3C/svg%3E" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
@@ -24,14 +26,23 @@
   <meta property="og:description" content="India asked to Fix My Itch — we FIXED your ITCH. Complete solutions, MVP roadmaps, pricing models & risk audits for every problem on Razorpay's wishlist." />
   <meta property="og:site_name" content="FIXED your ITCH" />
   <meta property="og:locale" content="en_IN" />
+  <meta property="og:image" content="https://fixed-your-itch.vercel.app/assets/og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FIXED your ITCH — 143 startup blueprints for India's real problems" />
+  <meta property="article:author" content="https://github.com/rohansachinpatil" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://fixed-your-itch.vercel.app/" />
   <meta name="twitter:title" content="FIXED your ITCH — 143 Solutions for Razorpay's Fix My Itch" />
   <meta name="twitter:description" content="India asked to Fix My Itch — we FIXED your ITCH. Every problem mapped with how to build it, pricing, GTM & risks." />
+  <meta name="twitter:image" content="https://fixed-your-itch.vercel.app/assets/og.png" />
+  <meta name="twitter:image:alt" content="FIXED your ITCH — 143 startup blueprints for India's real problems" />
+  <meta name="twitter:creator" content="@rohansachinpatil" />
 
-  <!-- Structured Data: WebSite & SearchAction Schema -->
+  <!-- Structured Data: WebSite, Person, FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,41 +52,63 @@
         "@id": "https://fixed-your-itch.vercel.app/#website",
         "url": "https://fixed-your-itch.vercel.app/",
         "name": "FIXED your ITCH",
+        "inLanguage": "en-IN",
         "alternateName": ["Fix My Itch Solutions", "Fixed Your Itch by Rohan Sachin Patil", "Razorpay Fix My Itch Solved"],
         "description": "Complete startup solutions and blueprints for all 143 problems from Razorpay's Fix My Itch initiative.",
-        "author": {
-          "@type": "Person",
-          "name": "Rohan Sachin Patil",
-          "sameAs": [
-            "https://github.com/rohansachinpatil",
-            "https://linkedin.com/in/rohansachinpatil"
-          ]
-        },
+        "author": { "@id": "https://fixed-your-itch.vercel.app/#author" },
+        "publisher": { "@id": "https://fixed-your-itch.vercel.app/#author" },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://fixed-your-itch.vercel.app/?q={search_term_string}",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://fixed-your-itch.vercel.app/?q={search_term_string}" },
           "query-input": "required name=search_term_string"
         }
       },
       {
-        "@type": "ItemList",
-        "name": "Top India Startup Problems from Fix My Itch",
-        "numberOfItems": 143,
-        "itemListElement": [
+        "@type": "Person",
+        "@id": "https://fixed-your-itch.vercel.app/#author",
+        "name": "Rohan Sachin Patil",
+        "url": "https://fixed-your-itch.vercel.app/",
+        "sameAs": [
+          "https://github.com/rohansachinpatil",
+          "https://www.linkedin.com/in/rohansaschinpatil",
+          "https://huggingface.co/rohansachinpatil"
+        ],
+        "jobTitle": "Founder & Developer",
+        "knowsAbout": ["Web scraping", "Data engineering", "Startup research", "Frontend engineering"]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fixed-your-itch.vercel.app/#faq",
+        "mainEntity": [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Fix My Itch Automotive & Used Car Verification"
+            "@type": "Question",
+            "name": "What is Fix My Itch?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Fix My Itch is a public platform by Razorpay where people and businesses in India describe real problems they want solved — from unverified plumbers to fake rental listings to medicines priced wildly differently across pharmacies. Each problem is scored by the platform on severity, market size, whitespace and frequency." }
           },
           {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Fix My Itch Housing & Rental Inspection"
+            "@type": "Question",
+            "name": "How many problems are covered and where do they come from?",
+            "acceptedAnswer": { "@type": "Answer", "text": "133 problems were scraped directly from Razorpay's Fix My Itch across all 16 published categories, each with its description, itch score and four sub-scores. Ten editorial-only picks from sectors the platform does not publish separately bring the atlas to 143 problems across 21 sectors." }
           },
           {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Fix My Itch Eldercare & Healthcare Support"
+            "@type": "Question",
+            "name": "Are the itch scores Razorpay's own?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Platform problems carry Razorpay's published itch score out of 100, plus their own severity, TAM, whitespace and frequency ratings normalised to a 0-10 scale. The ten editorial picks carry a weighted founder score instead: pain 30%, market 20%, timing 15%, feasibility 15%, moat 10%, revenue 10%." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does each brief include?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every brief covers the verified problem statement, who feels it, a technical build blueprint, the first version to ship, the revenue model, recommended pricing, go-to-market strategy, defensibility and moat, the vulnerabilities that can kill it, and a founder verdict." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this affiliated with Razorpay?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. FIXED your ITCH is an independent project by Rohan Sachin Patil. Razorpay and Fix My Itch are trademarks of Razorpay Software Pvt. Ltd. The problem statements are referenced from the public platform; all solutions, blueprints and analysis are independent original work." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this investment advice?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The scores and blueprints compare opportunities for builders. Nothing on this site is financial, legal or investment advice, and no outcome is guaranteed." }
           }
         ]
       }
@@ -83,12 +116,15 @@
   }
   </script>
 
+  <!-- Per-brief structured data, filled in by assets/app.js on navigation -->
+  <script type="application/ld+json" id="brief-schema">{}</script>
+
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
 
@@ -111,8 +147,9 @@
     </div>
   </nav>
 
-  <!-- ── INTRO SCRATCH OVERLAY (Exact Fix My Itch mechanic) ── -->
-  <div id="intro-scratch-overlay" class="intro-overlay" aria-label="Intro scratch card">
+  <!-- ── INTRO SCRATCH OVERLAY (shown once, on the very first visit) ── -->
+  <div id="intro-scratch-overlay" class="intro-overlay" role="dialog" aria-modal="true"
+       aria-label="Welcome: scratch the card to reveal 143 startup blueprints" tabindex="-1">
     <div class="intro-overlay-bg"></div>
     <div class="hl" style="top:22%" aria-hidden="true"></div>
     <div class="hl" style="top:63%" aria-hidden="true"></div>
@@ -124,9 +161,9 @@
         <canvas id="c0" aria-hidden="true"></canvas>
         <canvas id="c1" role="img" aria-label="Scratch to reveal FIXED your ITCH"></canvas>
       </div>
-      <div class="scratch-badge">SCRATCH TO REVEAL</div>
+      <div class="scratch-badge">143 STARTUP BRIEFS INSIDE</div>
+      <p class="intro-hint" aria-hidden="true">Drag across the card — or press Enter</p>
     </div>
-    <button type="button" class="skip-intro-btn" id="skip-intro-btn">SKIP INTRO →</button>
   </div>
 
   <main id="main">
@@ -154,8 +191,14 @@
       <div class="stats-inner" id="hero-stats"></div>
     </section>
 
-    <!-- ── PILE: category stamps scatter in ── -->
-    <section id="pile" class="grid" aria-label="Browse problems by sector"></section>
+    <!-- ── SECTOR PILE: tap a stamp to filter the ledger ── -->
+    <section id="pile" class="pile-section" aria-labelledby="pile-title">
+      <div class="pile-head">
+        <h2 id="pile-title">Pick a <em>sector</em></h2>
+        <p>Twenty-one sectors, one atlas. Tap any stamp to filter the ledger below it.</p>
+      </div>
+      <div class="pile-stamps" id="pile-stamps"></div>
+    </section>
 
     <!-- ── TOP 10 INTERACTIVE DECK ── -->
     <section class="pg" id="top-problems">
@@ -208,6 +251,37 @@
       </div>
     </section>
 
+    <!-- ── FAQ (also powers the FAQPage schema) ── -->
+    <section class="pg" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions, <em>answered</em></h2>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What is Fix My Itch?</summary>
+          <p>Fix My Itch is a public platform by Razorpay where people and businesses in India describe real problems they want solved — from unverified plumbers to fake rental listings to medicines priced wildly differently across pharmacies. The platform scores every problem on severity, market size, whitespace and frequency.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many problems are covered, and where do they come from?</summary>
+          <p>133 problems were scraped directly from Razorpay's Fix My Itch across all 16 published categories, each with its description, itch score and four sub-scores. Ten editorial-only picks from sectors the platform does not publish separately bring the atlas to 143 problems across 21 sectors.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are the itch scores Razorpay's own?</summary>
+          <p>Yes. Platform problems carry Razorpay's published itch score out of 100, plus their own severity, TAM, whitespace and frequency ratings, normalised here to a 0–10 scale because the source mixes scales between sectors. The ten editorial picks carry a weighted founder score instead: pain 30%, market 20%, timing 15%, feasibility 15%, moat 10%, revenue 10%.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does each brief include?</summary>
+          <p>The verified problem statement, who feels it, a technical build blueprint, the first version to ship, the revenue model, recommended pricing, go-to-market strategy, defensibility and moat, the vulnerabilities that can kill it, and a founder verdict. Every brief can be copied as plain text in one click.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this affiliated with Razorpay?</summary>
+          <p>No. FIXED your ITCH is an independent project by Rohan Sachin Patil. Razorpay and Fix My Itch are trademarks of Razorpay Software Pvt. Ltd. The problem statements are referenced from the public platform; all solutions, blueprints, names and analysis are independent original work.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this investment advice?</summary>
+          <p>No. The scores and blueprints compare opportunities for builders. Nothing on this site is financial, legal or investment advice, and no outcome is guaranteed.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- ── SHOUTOUT ── -->
     <section id="shoutout" class="pg">
       <div class="shout-inner">
@@ -218,7 +292,7 @@
           <a class="b primary" href="https://github.com/rohansachinpatil" target="_blank" rel="noopener noreferrer">
             GitHub Profile →
           </a>
-          <a class="b" href="https://linkedin.com/in/rohansachinpatil" target="_blank" rel="noopener noreferrer">
+          <a class="b" href="https://www.linkedin.com/in/rohansaschinpatil" target="_blank" rel="noopener noreferrer">
             LinkedIn Profile →
           </a>
         </div>
@@ -247,15 +321,18 @@
       <p class="foot-legal">No trackers · No cookies · Zero personal data stored · © 2026 Rohan Sachin Patil</p>
       <p class="foot-links">
         <a href="https://github.com/rohansachinpatil" target="_blank" rel="noopener noreferrer">GitHub (@rohansachinpatil)</a>
-        <a href="https://linkedin.com/in/rohansachinpatil" target="_blank" rel="noopener noreferrer">LinkedIn (rohansachinpatil)</a>
+        <a href="https://www.linkedin.com/in/rohansaschinpatil" target="_blank" rel="noopener noreferrer">LinkedIn (rohansaschinpatil)</a>
         <a href="https://razorpay.com/m/fix-my-itch/" target="_blank" rel="noopener noreferrer">Official Fix My Itch</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
       </p>
     </div>
   </footer>
 
   <div id="toast" role="status" aria-live="polite">Link Copied!</div>
 
-  <script src="data/problems.js"></script>
-  <script src="assets/app.js"></script>
+  <script src="/data/problems.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>
