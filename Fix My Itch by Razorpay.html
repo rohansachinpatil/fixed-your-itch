@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Fix My Itch by Razorpay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&display=swap">
+<style>
+:root{--bl:#2f55f4;--dk:#1e1e1e;--wh:#f4f4f2;--g:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+--m:radial-gradient(circle 4px at 50% 0,#0000 97%,#000) 0 0/12px 100% repeat-x,radial-gradient(circle 4px at 50% 100%,#0000 97%,#000) 0 0/12px 100% repeat-x,radial-gradient(circle 4px at 0 50%,#0000 97%,#000) 0 0/100% 12px repeat-y,radial-gradient(circle 4px at 100% 50%,#0000 97%,#000) 0 0/100% 12px repeat-y;
+box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--dk);color:#fff;font-family:Inter,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
+.st{position:absolute;padding:2.2vw;background-color:var(--c);background-image:var(--g);color:var(--t);font:400 clamp(26px,3.6vw,64px)/.95 "Bebas Neue",Impact,sans-serif;text-transform:uppercase;-webkit-mask:var(--m);-webkit-mask-composite:source-in;mask:var(--m);mask-composite:intersect;transform:rotate(var(--r))}
+.bl{--c:var(--bl);--t:#fff}.wt{--c:#f6f6f4;--t:var(--bl)}.gy{--c:#b9b9b9;--t:#8a8a8a}.dg{--c:#3a3a3a;--t:#5e5e5e}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;display:flex;justify-content:space-between;align-items:center;background:#2a2a2acc;backdrop-filter:blur(14px)}
+.logo{font:italic 800 28px "Archivo Black",Arial,sans-serif;letter-spacing:-1px;color:#fff;text-decoration:none}.logo b{color:#3b82f6}
+nav div{display:flex;gap:clamp(14px,3vw,44px)}nav a:not(.logo){color:#fff;text-decoration:none;font:800 17px "Archivo Black",Arial,sans-serif;text-transform:uppercase;opacity:.9}nav a:not(.logo):hover{color:#6d8bff}
+@media(max-width:700px){nav div{display:none}}
+#home{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 5vw 60px}
+#home .st{filter:blur(.4px);opacity:.9}
+#home>*:not(.st){position:relative;z-index:2}
+.sub{letter-spacing:.45em;font-size:clamp(11px,1.5vw,22px);margin:0 0 18px;font-weight:500}
+.ti{font:clamp(70px,16vw,260px)/.8 "Archivo Black",Impact,sans-serif;display:flex;align-items:center;gap:0;margin:0}
+.ti span.my{font:italic 900 clamp(26px,4.6vw,78px)/1 "Archivo Black",sans-serif;background:#fff;color:#111;padding:.1em .2em;transform:rotate(-4deg);margin:0 -.5vw;position:relative;top:.4em;text-transform:lowercase;z-index:3}
+.by{align-self:flex-end;margin:6px 0 0;font-size:clamp(18px,2.4vw,34px);margin-right:calc(50% - min(48vw,480px))}.by i{font:italic 800 1.15em "Archivo Black";letter-spacing:-1px}
+.ctas{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+.b{font:700 clamp(18px,1.8vw,26px) Inter,Arial,sans-serif;padding:20px 32px;border:1.5px solid #ffffffbb;background:transparent;color:#fff;text-decoration:none;cursor:pointer;transition:.2s}
+.b.p{background:#2d55f0;border-color:#2d55f0}.b:hover{transform:translateY(-3px);filter:brightness(1.2)}
+.grid{background-image:linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:10.4vw 100%}
+#scratch{position:relative;height:100vh;min-height:620px;overflow:hidden;display:flex;align-items:center;justify-content:center;background-color:#222}
+#scratch .hl{position:absolute;left:0;right:0;border-top:1px dashed #ffffff30}
+.mq{position:absolute;top:50%;transform:translateY(-52%);white-space:nowrap;font:clamp(120px,13vw,250px)/1 Anton,Impact,sans-serif;color:#808080;animation:mq 28s linear infinite}
+@keyframes mq{to{transform:translate(-50%,-52%)}}
+.sw{position:relative;z-index:2;width:min(450px,78vw);aspect-ratio:9/10;filter:drop-shadow(0 30px 40px #0009)}
+.sw .face{position:absolute;inset:0;-webkit-mask:var(--m);-webkit-mask-composite:source-in;mask:var(--m);mask-composite:intersect}
+.sw canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .7s}
+.sw canvas.gone{opacity:0;pointer-events:none}
+#pile{position:relative;height:130vh;min-height:760px;overflow:hidden;background-color:#1a1a1a}
+#pile .st{opacity:0;transform:translateY(120px) rotate(var(--r)) scale(.6);transition:opacity .6s,transform .9s cubic-bezier(.2,1.2,.3,1);transition-delay:var(--d)}
+#pile.on .st{opacity:1;transform:rotate(var(--r))}#pile .st:hover{z-index:9;filter:brightness(1.1)}
+section.pg{padding:90px 5vw;position:relative}
+h2{font:clamp(48px,9vw,150px)/.9 Anton,Impact,sans-serif;text-transform:uppercase;margin:0 0 36px}
+h2 em{color:var(--bl);font-style:normal}
+.car{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 10px 40px;scrollbar-width:none}
+.car .st{position:relative;flex:0 0 min(320px,76vw);min-height:400px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;font-size:38px;padding:30px;transition:transform .3s}
+.car .st:hover{transform:rotate(0) scale(1.04)}.car small{font:700 13px Inter,sans-serif;letter-spacing:.15em;opacity:.8}.car big{font:80px Anton;opacity:.25}
+.deck{position:relative;height:520px;max-width:440px;margin:20px auto 20px;touch-action:pan-y;user-select:none}
+.deck .st{left:50%;top:40px;width:min(340px,78vw);height:440px;margin-left:calc(min(340px,78vw)/-2);display:flex;flex-direction:column;justify-content:space-between;font-size:36px;padding:30px;cursor:grab;transition:transform .45s cubic-bezier(.2,.9,.3,1),opacity .3s;will-change:transform}
+.deck .st.d{transition:none;cursor:grabbing}.deck small{font:700 13px Inter,sans-serif;letter-spacing:.15em;opacity:.8}.deck big{font:80px Anton;opacity:.25}
+.dc{text-align:center;font:700 14px Inter,sans-serif;letter-spacing:.2em;color:#aaa;margin-bottom:16px}.arr{text-align:center}
+.arr button{width:54px;height:54px;border-radius:50%;border:1.5px solid #fff;background:none;color:#fff;font-size:22px;cursor:pointer;margin-right:10px}.arr button:hover{background:#fff;color:#111}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.chip{border:1.5px solid #fff6;background:none;color:#fff;padding:9px 16px;font:600 13px Inter,sans-serif;cursor:pointer;text-transform:uppercase;letter-spacing:.06em}.chip.on{background:var(--bl);border-color:var(--bl)}
+.row{display:grid;grid-template-columns:1fr 100px 170px;gap:16px;padding:18px 8px;border-bottom:1px solid #ffffff22;align-items:center;font-size:18px}
+.row:not(.hd):hover{background:#ffffff0d}.hd{font:700 12px Inter;letter-spacing:.2em;color:#999;cursor:pointer}
+.sc{font:30px Anton;color:#6d8bff}.tg{font:600 12px Inter;border:1px solid #fff5;padding:5px 12px;justify-self:start}
+#mission{background:var(--bl);text-align:center;padding:110px 5vw}#mission h2 em{color:#fff}
+#mission p{max-width:680px;margin:0 auto 34px;font-size:20px;line-height:1.6}#mission .b{background:#fff;color:#111;border-color:#fff}
+footer{padding:50px 5vw;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:center}footer a{color:#fff;margin-right:18px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140px);background:#fff;color:#111;padding:14px 24px;font-weight:700;transition:.3s;z-index:30}#toast.s{transform:translate(-50%,0)}
+@media(max-width:700px){.row{grid-template-columns:1fr 56px}.row .tg{grid-column:1/-1}.row.hd span:last-child{display:none}.ti{flex-wrap:wrap;justify-content:center}.by{align-self:center;margin-right:0}}
+</style></head><body>
+<nav><a class="logo" href="#home"><b>◢</b>Razorpay</a><div><a href="#insights">Insights</a><a href="#top-10-problems">Top 10 Problems</a><a href="#all-problems">All Problems</a><a href="#mission">Mission</a></div></nav>
+
+<header id="home" class="grid"><div id="hs"></div>
+<p class="sub">INDIA'S WISHLIST FOR FOUNDERS TO SOLVE</p>
+<h1 class="ti"><span>FIX</span><span class="my">my</span><span>ITCH</span></h1>
+<p class="by">by <i>Razorpay</i></p>
+<div class="ctas"><a class="b p" href="#top-10-problems">Show Me Top Problems</a><a class="b" href="#all-problems">Nah, Show Me Everything</a></div></header>
+
+<section id="scratch" class="grid"><div class="hl" style="top:22%"></div><div class="hl" style="top:62%"></div>
+<div class="mq" id="mq"></div>
+<div class="sw"><div class="face"><canvas id="c0"></canvas><canvas id="c1"></canvas></div></div></section>
+
+<section id="pile" class="grid"></section>
+
+<section class="pg" id="insights"><h2>India spoke. <em>Here's how.</em></h2>
+<div style="display:flex;flex-wrap:wrap;gap:40px;font:clamp(40px,6vw,90px)/1 Anton"><div>10,000+<br><small style="font:600 16px Inter;letter-spacing:.2em;color:#aaa">VERIFIED PROBLEMS</small></div><div>50K<br><small style="font:600 16px Inter;letter-spacing:.2em;color:#aaa">PEOPLE AND COUNTING</small></div><div>AI<br><small style="font:600 16px Inter;letter-spacing:.2em;color:#aaa">POWERED CURATION</small></div></div></section>
+
+<section class="pg" id="top-10-problems"><h2>Top 10 <em>Problems</em></h2><div class="deck" id="deck"></div><div class="dc" id="dc"></div>
+<div class="arr"><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button><div class="dc" style="margin-top:14px">DRAG, CLICK OR SCROLL SIDEWAYS</div></div></section>
+
+<section class="pg" id="all-problems"><h2>All <em>Problems</em></h2>
+<div class="chips" id="flt"></div>
+<div class="row hd"><span>ITCHES</span><span id="sb">ITCH SCORE ↕</span><span>INDUSTRY</span></div><div id="list"></div></section>
+
+<section id="mission"><h2>Start <em>building</em> now</h2><p>India is full of problems worth solving. Now, they're all in one place. This is our gift to the next gen of founders to satisfy their itch and build what's next. Want to start building? Start where India itches.</p><a class="b" href="#all-problems">Explore problems</a></section>
+<footer><div><h2 style="font-size:44px;margin:0 0 12px">Get involved</h2><button class="b p" id="share">Share With A Founder</button></div><div>Stay updated: <a href="https://www.instagram.com/razorpay/">Instagram</a><a href="https://www.linkedin.com/company/razorpay">LinkedIn</a><a href="https://x.com/Razorpay">X</a><a href="https://razorpay.com/">razorpay.com</a></div></footer>
+<div id="toast">Link Copied!</div>
+<script>
+const $=s=>document.querySelector(s);
+const T=[["Automotive","Why can't first time used car buyers verify car histories, conditions and future maintenance costs?"],["Housing","Why can't renters access verified mold, pests or hazards before signing leases?"],["Healthcare","Why is caring for aging parents for sole earners across cities still fragmented & stressful?"],["Healthcare","Why do teachers lack real time mental health support at work?"],["Career","Why do STEM students face education loan anxiety from unclear costs in 2026?"],["Consumer Services","Why can't consumers see verified kitchen safety standards on food delivery apps?"],["Hardware","Why is connecting specialized hardware to laptops still unreliable and frustrating?"],["Healthcare","Why is distinguishing sprains from fractures impossible without costly hospital visits?"],["Career","Why do people leaving formal education lack structure, mentorship and clear career guidance?"],["Healthcare","Why can't anxious people find trustworthy non-prescription sleep solutions easily?"]];
+const B=[["Why do freelancers ghost projects after partial payments without accountability systems?",76],["Why are small retailers forced into distributor margins without direct brand access?",68.5],["Why do micro-SMEs waste 10+ hours weekly on invoice management?",67.5],["Why can't manufacturers rely on guaranteed, accountable pickup logistics for outbound deliveries?",79],["Why do factory owners wait days for industrial repair technicians?",78.5],["Why can't shops see real-time supplier stock levels?",67.5],["Why can't small restaurants access wholesale ingredient pricing without large minimum orders?",71.5],["Why can't businesses verify new suppliers before purchasing?",76],["Why can't SMEs negotiate favorable payment terms with large buyers?",82.8],["Why do businesses struggle finding reliable contract manufacturers for small batches?",75.2]];
+const D=B.map(([q,s])=>({q,s,c:"B2B Services"})).concat(T.map(([c,q])=>({q,s:null,c})));
+// hero stamps: [text,left,top,rot,width,class]
+$("#hs").innerHTML=[["Why is moving homes so expensive?",-3,22,-6,26,"gy"],["Why is getting a personal trainer so expensive?",72,24,-12,26,"dg"],["Why is moving homes so expensive?",8,78,-8,30,"dg"],["Why are group trips so hard to plan?",56,82,-4,30,"gy"],["Why is protein so hard to track?",86,60,-5,22,"gy"],["Why is parking always a problem?",28,-8,5,30,"dg"],["Why is rent so expensive?",62,-6,4,28,"gy"]].map(([t,l,tp,r,w,c])=>`<div class="st ${c}" style="left:${l}%;top:${tp}%;--r:${r}deg;width:${w}vw">${t}</div>`).join("");
+$("#mq").innerHTML="SCRATCH TO REVEAL ✱ ".repeat(8);
+// pile
+const P=["Why are group trips so hard to plan?","Why is protein so hard to track?","Why is parking always a problem?","Why is moving homes so expensive?","Why is getting a personal trainer so expensive?"];let sd=7;const rnd=()=>(sd=sd*16807%2147483647)/2147483647;
+$("#pile").innerHTML=Array.from({length:18},(_,i)=>{const c=["bl","wt","bl","wt","gy"][i%5];return `<div class="st ${c}" style="left:${rnd()*88-6}%;top:${rnd()*95-8}%;--r:${rnd()*50-25}deg;width:${24+rnd()*10}vw;--d:${i*.06}s">${P[i%5]}</div>`}).join("");
+const pile=$("#pile");let po=new IntersectionObserver(e=>{if(e[0].isIntersecting)pile.classList.add("on")},{threshold:.25});po.observe(pile);
+// scratch
+function paint(c,bg,fg){const w=c.width,h=c.height,x=c.getContext("2d");x.fillStyle=bg;x.fillRect(0,0,w,h);x.fillStyle=fg;x.font=`${w*.22}px Anton,Impact,sans-serif`;["INDIA'S","WISHLIST","FOR","FOUNDERS"].forEach((t,i)=>x.fillText(t,w*.07,h*.2+i*w*.21));x.font=`700 ${w*.055}px Inter,Arial,sans-serif`;x.textAlign="center";x.fillText("SCRATCH TO REVEAL",w/2,h*.93);x.textAlign="left"}
+const c0=$("#c0"),c1=$("#c1"),x1=c1.getContext("2d");let on=0,done=0;
+function init(){const r=c1.getBoundingClientRect();[c0,c1].forEach(c=>{c.width=r.width;c.height=r.height});paint(c0,"#f6f6f4","#2f55f4");x1.globalCompositeOperation="source-over";paint(c1,"#2f55f4","#fff");x1.globalCompositeOperation="destination-out"}
+document.fonts.load("80px Anton").then(()=>document.fonts.ready).then(init);init();
+function sc(e){if(!on||done)return;const r=c1.getBoundingClientRect();x1.beginPath();x1.arc(e.clientX-r.left,e.clientY-r.top,r.width*.07,0,7);x1.fill()}
+function chk(){const d=x1.getImageData(0,0,c1.width,c1.height).data;let n=0,t=0;for(let i=3;i<d.length;i+=80){t++;if(!d[i])n++}if(n/t>.5){done=1;c1.classList.add("gone");pile.classList.add("on");setTimeout(()=>pile.scrollIntoView({behavior:"smooth"}),500)}}
+c1.onpointerdown=e=>{on=1;c1.setPointerCapture(e.pointerId);sc(e)};c1.onpointermove=sc;c1.onpointerup=()=>{on=0;chk()};
+// carousel
+const deck=$("#deck");let ord=T.map((_,i)=>i),busy=0,sx=0,dx=0,dn=0;
+deck.innerHTML=T.map(([c,q],i)=>`<div class="st ${i%2?"wt":"bl"}"><small>${c}</small><span>${q}</span><big>${String(i+1).padStart(2,"0")}</big></div>`).join("");
+const cs=[...deck.children];
+function lay(){ord.forEach((id,p)=>{const e=cs[id];e.style.zIndex=20-p;e.style.opacity=p>5?0:1;e.style.transform=`translate(${p*9}px,${p*7}px) rotate(${p?(p%2?1:-1)*p*2.2:0}deg) scale(${1-p*.03})`});$("#dc").textContent=String(ord[0]+1).padStart(2,"0")+" / 10"}
+function go(d,s=1){if(busy)return;busy=1;if(d>0){const e=cs[ord[0]];e.style.zIndex=30;e.style.opacity=0;e.style.transform=`translate(${s*innerWidth*.6}px,-30px) rotate(${s*25}deg)`;setTimeout(()=>{ord.push(ord.shift());lay();busy=0},330)}else{ord.unshift(ord.pop());lay();setTimeout(()=>busy=0,300)}}
+deck.onpointerdown=e=>{if(busy)return;sx=e.clientX;dx=0;dn=1;deck.setPointerCapture(e.pointerId);cs[ord[0]].classList.add("d")};
+deck.onpointermove=e=>{if(!dn)return;dx=e.clientX-sx;cs[ord[0]].style.transform=`translate(${dx}px,0) rotate(${dx/18}deg)`};
+const up=()=>{if(!dn)return;dn=0;cs[ord[0]].classList.remove("d");if(Math.abs(dx)>80||Math.abs(dx)<6)go(1,dx<0?-1:1);else lay()};
+deck.onpointerup=up;deck.onpointercancel=up;
+deck.addEventListener("wheel",e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>15){e.preventDefault();go(1,e.deltaX>0?-1:1)}},{passive:false});
+lay();
+$("#nx").onclick=()=>go(1,1);$("#pv").onclick=()=>go(-1);
+// list
+let cat="All",dir=0;
+$("#flt").innerHTML=["All",...new Set(D.map(d=>d.c))].map(c=>`<button class="chip${c=="All"?" on":""}">${c}</button>`).join("");
+document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{cat=b.textContent;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x==b));draw()});
+$("#sb").onclick=()=>{dir=dir==-1?1:-1;draw()};
+function draw(){let r=D.filter(d=>cat=="All"||d.c==cat);if(dir)r=[...r].sort((a,b)=>dir*((a.s??-1)-(b.s??-1)));$("#list").innerHTML=r.map(d=>`<div class="row"><span>${d.q}</span><span class="sc">${d.s??"—"}</span><span class="tg">${d.c}</span></div>`).join("")}draw();
+$("#share").onclick=async()=>{try{await navigator.clipboard.writeText(location.href)}catch(e){}const t=$("#toast");t.classList.add("s");setTimeout(()=>t.classList.remove("s"),1800)};
+</script></body></html>

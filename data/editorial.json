@@ -1,0 +1,775 @@
+{
+  "note": "Editorial-only problems carried from the earlier 20-problem build. Fixed input for scripts/build-dataset.js.",
+  "problems": [
+    {
+      "id": "why-is-distinguishing-sprains-from-fractures-impossible-without-costly",
+      "startup": "ScanFirst",
+      "title": "Why is distinguishing sprains from fractures impossible without costly hospital visits?",
+      "category": "Healthcare",
+      "source": "editorial",
+      "rating": 79.1,
+      "prompt": null,
+      "description": "A ₹1,500 hospital visit, a four-hour wait and an X-ray read by whoever is on duty. Imaging is centralised and expensive. Triage is guesswork, so everyone defaults to the emergency room.",
+      "who": "People with ankle, wrist or knee injuries in tier-1 and tier-2 cities, especially at night or after sport.",
+      "tags": [
+        "diagnostics",
+        "clinics",
+        "AI triage"
+      ],
+      "pitch": "A ₹399 scan-and-triage service that tells you whether it is a sprain or a fracture, without the hospital queue.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 82,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 86,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 88,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 58,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 80,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Put portable X-ray or ultrasound in partner pharmacies and micro-clinics, with a radiographer on a fixed protocol.",
+          "Run AI-assisted fracture triage, then have a radiologist sign off before the report reaches the patient.",
+          "Return a 30-minute report with a clear next step: home care, immobilisation kit or orthopaedic referral."
+        ],
+        "mvp": [
+          "Five micro-clinics",
+          "Two reporting radiologists",
+          "Triage model and referral network"
+        ],
+        "model": "Per-scan fee, insurer and employer contracts, referral share.",
+        "price": "₹399–699 per scan, with a ₹199 tele-review add-on.",
+        "gtm": "Pharmacy chains, sports academies and corporate health camps. Night-time availability is the wedge.",
+        "moat": "A distributed imaging network and an annotated triage dataset. Both compound with volume."
+      },
+      "risks": [
+        "Radiology regulation and licensing",
+        "Clinical liability",
+        "Equipment capex"
+      ],
+      "market": {
+        "tam": "₹10,000 Cr+ diagnostic imaging market, with MSK injuries as a high-frequency entry point",
+        "time": "7–10 months",
+        "capital": "₹1.5–2.5 Cr"
+      },
+      "verdict": "The hardest part of an injury is not the treatment, it is finding out how serious it is. Charge for the answer.",
+      "rank": 48
+    },
+    {
+      "id": "why-cant-firsttime-used-car-buyers-verify-car-histories",
+      "startup": "TorqueProof",
+      "title": "Why can't first-time used car buyers verify car histories, conditions and future maintenance costs?",
+      "category": "Automotive",
+      "source": "editorial",
+      "rating": 79,
+      "prompt": null,
+      "description": "A dealer's 12-point 'inspection', WhatsApp photos and a mechanic's gut feel. Service records stay with the workshop that did the work. Vehicle data is split across insurers, workshops, RTOs and dealers. Nobody in the transaction is rewarded for revealing the car's real condition.",
+      "who": "First-time buyers spending ₹3–12 lakh on a used car, often without a mechanic in the family.",
+      "tags": [
+        "consumer",
+        "marketplace trust",
+        "inspection"
+      ],
+      "pitch": "A verified history and condition dossier for first-time used-car buyers, built from the car's own data.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 80,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 88,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 82,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 66,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 72,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 80,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Pull registration, insurance and service history against the VIN, then run a 90-minute physical inspection with an OBD-II scan, paint-depth gauge and underbody photos.",
+          "Generate a condition report with a fair-price band and a 12-month maintenance forecast, not just a pass/fail checklist.",
+          "Back every dossier with a dispute window and a partner warranty, so the report carries financial weight."
+        ],
+        "mvp": [
+          "Inspector app with a fixed 60-point protocol",
+          "Report web link with photo evidence",
+          "Two-city inspector network and 20 dealer supply partners"
+        ],
+        "model": "Per-inspection fee, dealer subscriptions, commission on warranty and insurance attach.",
+        "price": "₹1,499 per dossier. Dealer plans from ₹15,000/month.",
+        "gtm": "Sell through used-car marketplaces, car-loan agents and independent dealers. Rank for 'used car inspection + city' searches.",
+        "moat": "Longitudinal vehicle data, an inspector network and warranty partnerships. Each report makes the next valuation sharper."
+      },
+      "risks": [
+        "Inspection quality varies by inspector",
+        "Liability on a missed defect",
+        "Marketplaces may build this in-house"
+      ],
+      "market": {
+        "tam": "₹40,000 Cr+ organised used-car market where inspection is the trust bottleneck",
+        "time": "6–8 months",
+        "capital": "₹60–90 lakh"
+      },
+      "verdict": "Trust is the tax on India's used-car market. Whoever removes it owns the transaction.",
+      "rank": 50
+    },
+    {
+      "id": "why-is-caring-for-aging-parents-for-sole-earners",
+      "startup": "ElderBridge",
+      "title": "Why is caring for aging parents for sole earners across cities still fragmented & stressful?",
+      "category": "Healthcare",
+      "source": "editorial",
+      "rating": 78.8,
+      "prompt": null,
+      "description": "WhatsApp groups, a local attendant, and emergency calls that arrive after the fall, not before. Care is informal and unverified. Families have no single record of medicines, appointments and incidents, so every sibling becomes a project manager.",
+      "who": "Sole earners in metros with parents in another city, plus NRI siblings coordinating from abroad.",
+      "tags": [
+        "aging",
+        "care operations",
+        "family"
+      ],
+      "pitch": "One accountable layer for aging parents: care, records and a family dashboard across cities.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 88,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 84,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 80,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 56,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 78,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Build a vetted caregiver and attendant network with background checks, replacement SLAs and trained geriatric aides.",
+          "Run a shared care plan: medication log, appointments, vitals from a home BP/SpO2 kit, and incident notes visible to every sibling.",
+          "Add an escalation desk with partner hospitals and a monthly family review call led by a care manager."
+        ],
+        "mvp": [
+          "One-city attendant network of 30",
+          "Care-plan app and family dashboard",
+          "24/7 helpline and hospital partners"
+        ],
+        "model": "Monthly care subscription, hourly visits, commission on diagnostics and pharmacy.",
+        "price": "₹8,000–15,000/month plus visit fees.",
+        "gtm": "Geriatric clinics, apartment communities and NRI associations. Care managers close the sale, not ads.",
+        "moat": "Trust operations and longitudinal family records. Reliability is the product."
+      },
+      "risks": [
+        "Operations-heavy with caregiver churn",
+        "Medical liability",
+        "Families price-shop on hourly rates"
+      ],
+      "market": {
+        "tam": "India's 14 crore+ senior population, with a fast-growing paid-care segment",
+        "time": "7–9 months",
+        "capital": "₹1–1.5 Cr"
+      },
+      "verdict": "The buyer is guilty, far away and has money. That is the most reliable demand signal in healthcare.",
+      "rank": 53
+    },
+    {
+      "id": "why-do-stem-students-face-education-loan-anxiety-from",
+      "startup": "LoanLens",
+      "title": "Why do STEM students face education loan anxiety from unclear costs in 2026?",
+      "category": "Career",
+      "source": "editorial",
+      "rating": 74.7,
+      "prompt": null,
+      "description": "Glossy brochures, agent-led comparisons and a disbursement process that hides processing fees, insurance bundles and reset rates. Cost data is scattered across lenders and colleges, and the intermediary earns a commission on the loan, not on clarity.",
+      "who": "STEM aspirants and parents borrowing ₹8–40 lakh for private colleges.",
+      "tags": [
+        "fintech",
+        "education",
+        "transparency"
+      ],
+      "pitch": "The true-cost layer for education loans: compare, simulate and track every rupee before and after admission.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 78,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 76,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 84,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 58,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 66,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Simulate the full cost of a course: tuition, hostel, living costs, moratorium interest and repayment under three salary scenarios.",
+          "Compare lenders on effective APR, foreclosure terms and disbursement conditions, with conflicts disclosed.",
+          "Track disbursement, fee demands and interest accrual in one document vault, then alert the borrower when refinancing beats the current loan."
+        ],
+        "mvp": [
+          "Cost simulator for 50 colleges",
+          "Lender comparison for 8 lenders",
+          "WhatsApp advisor and document vault"
+        ],
+        "model": "Disclosed lender lead fees, a paid planning tier, refinance commission.",
+        "price": "Free comparison. ₹499 for the planning vault. Refinance fee from the new lender.",
+        "gtm": "Admissions YouTube and Telegram communities, test-prep partners and college financial-aid cells.",
+        "moat": "Structured cost and outcome data by college and course. Trust is the distribution."
+      },
+      "risks": [
+        "Affiliate revenue conflicts with neutrality",
+        "Seasonal demand",
+        "Data accuracy across lenders"
+      ],
+      "market": {
+        "tam": "₹1.5 lakh Cr+ education loan book, with private STEM colleges as the pain centre",
+        "time": "4–6 months",
+        "capital": "₹30–60 lakh"
+      },
+      "verdict": "Students compare colleges on placement. Nobody compares the loan that pays for it. That gap is the product.",
+      "rank": 83
+    },
+    {
+      "id": "why-cant-anxious-people-find-trustworthy-nonprescription-sleep-solutions",
+      "startup": "Sleepwell",
+      "title": "Why can't anxious people find trustworthy non-prescription sleep solutions easily?",
+      "category": "Healthcare",
+      "source": "editorial",
+      "rating": 73.2,
+      "prompt": null,
+      "description": "Google, melatonin gummies and a ten-minute doctor visit that ends with a prescription. CBT-I is the gold standard but scarce and expensive. OTC options are unregulated, and no one follows up on whether they work.",
+      "who": "Anxious urban adults aged 25–45 with chronic insomnia who want help without a psychiatric label.",
+      "tags": [
+        "sleep",
+        "behavioural health",
+        "pharmacy"
+      ],
+      "pitch": "A pharmacist-led, non-prescription sleep clinic for people who do not want another sedative.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 80,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 82,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 66,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 56,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 72,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Deliver a structured six-week CBT-I programme with a sleep coach and weekly adherence check-ins.",
+          "Partner with pharmacies for validated melatonin and supplement protocols, with clear red-flag screening.",
+          "Close the loop with wearable sleep data and escalate to a sleep physician when symptoms suggest apnoea or depression."
+        ],
+        "mvp": [
+          "Six-week programme",
+          "Five trained sleep coaches",
+          "Ten pharmacy partners and an outcome registry"
+        ],
+        "model": "Programme fee, pharmacy margin, employer wellness contracts.",
+        "price": "₹2,999 for the programme. ₹499/month maintenance.",
+        "gtm": "Pharmacy counters, mental-health platforms and insomnia communities.",
+        "moat": "Clinical protocol and outcomes registry. Trust, not technology, is the defensible asset."
+      },
+      "risks": [
+        "Supplement regulation",
+        "Programme adherence",
+        "Low perceived severity until it becomes chronic"
+      ],
+      "market": {
+        "tam": "₹3,000 Cr+ sleep-aid market, with a large untreated behavioural segment",
+        "time": "5–7 months",
+        "capital": "₹30–50 lakh"
+      },
+      "verdict": "People are already self-medicating. Give them a credible protocol before they graduate to prescriptions.",
+      "rank": 92
+    },
+    {
+      "id": "why-cant-consumers-see-verified-kitchen-safety-standards-on",
+      "startup": "KitchenClear",
+      "title": "Why can't consumers see verified kitchen safety standards on food delivery apps?",
+      "category": "Consumer Services",
+      "source": "editorial",
+      "rating": 70.7,
+      "prompt": null,
+      "description": "A 4.2-star rating, styled food photos and an FSSAI number nobody checks. Platforms rate taste and speed, not safety. Audits are annual paper exercises and inspection reports are not public.",
+      "who": "Urban customers ordering four to ten times a month, and cloud kitchens with no brand to protect.",
+      "tags": [
+        "food safety",
+        "marketplace",
+        "trust"
+      ],
+      "pitch": "A verified hygiene layer for food delivery: audits, live kitchen evidence and insurance behind every order.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 72,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 82,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 76,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 54,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 70,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 62,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Run unannounced audits with photo and video evidence, ATP surface swabs and cold-chain checks.",
+          "Publish a hygiene score inside listings through partner APIs, with an open-kitchen camera badge for top performers.",
+          "Attach order-level cover from an insurance partner, so a bad meal has a claims path."
+        ],
+        "mvp": [
+          "Audit protocol and 100-kitchen pilot in one city",
+          "Badge widget for listings",
+          "One aggregator pilot and an insurance partner"
+        ],
+        "model": "Kitchen subscriptions, platform audit fees, insurance commission.",
+        "price": "₹2,999/month per kitchen. Audit fees from platforms.",
+        "gtm": "Start with cloud-kitchen operators and premium brands. Publish a city hygiene index to earn attention.",
+        "moat": "A standard, an audit network and historical evidence. Diners create the pull."
+      },
+      "risks": [
+        "Aggregator gatekeeping",
+        "Audit fraud",
+        "Kitchen churn at low scores"
+      ],
+      "market": {
+        "tam": "India's ₹80,000 Cr+ food delivery market, with 1 lakh+ cloud kitchens",
+        "time": "6–8 months",
+        "capital": "₹50–80 lakh"
+      },
+      "verdict": "Every food order is a trust decision. The rating is the wrong instrument; an audit score is the right one.",
+      "rank": 106
+    },
+    {
+      "id": "why-cant-renters-access-verified-mold-pests-or-hazards",
+      "startup": "LeaseProof",
+      "title": "Why can't renters access verified mold, pests or hazards before signing leases?",
+      "category": "Housing",
+      "source": "editorial",
+      "rating": 69.5,
+      "prompt": null,
+      "description": "A hurried visit, a broker's assurance and a 'no dampness' clause. Mould shows up after the first monsoon. Inspections are one-off, undocumented and unenforceable. The landlord controls the evidence and the deposit.",
+      "who": "Renters in metros signing 11-month leases, especially first-time movers and families with children.",
+      "tags": [
+        "consumer",
+        "housing",
+        "verification"
+      ],
+      "pitch": "Move-in health checks and hazard records that renters can actually trust before signing.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 78,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 70,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 52,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 66,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 68,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Send a certified inspector with a moisture meter, mould swabs and a pest checklist to produce a 30-point health report before the lease.",
+          "Attach the report to the rental agreement as a baseline, with photo evidence and remediation cost estimates.",
+          "Offer a 30-day re-check and a verified-landlord badge that future tenants can see."
+        ],
+        "mvp": [
+          "Certified inspector network in two cities",
+          "Sensor kit and report template",
+          "Shareable report link plus landlord onboarding"
+        ],
+        "model": "Renter-paid inspection, landlord verification subscription, property-manager contracts.",
+        "price": "₹999–1,999 per inspection. ₹499/month for a verified-landlord badge.",
+        "gtm": "Broker partnerships, apartment associations and rental communities. Use the city hazard index as a PR hook.",
+        "moat": "Standardised building-level hazard data and an inspector network. Difficult to copy without local operations."
+      },
+      "risks": [
+        "Low willingness to pay before a lease",
+        "Landlord pushback",
+        "Strong seasonal demand"
+      ],
+      "market": {
+        "tam": "India's urban rental market, with 30 crore+ renters and no standard move-in health record",
+        "time": "5–7 months",
+        "capital": "₹40–70 lakh"
+      },
+      "verdict": "Renters already pay a deposit to protect the landlord. A small fee to protect their health is an easy story.",
+      "rank": 114
+    },
+    {
+      "id": "why-do-people-leaving-formal-education-lack-structure-mentorship",
+      "startup": "Pathway",
+      "title": "Why do people leaving formal education lack structure, mentorship and clear career guidance?",
+      "category": "Career",
+      "source": "editorial",
+      "rating": 68.5,
+      "prompt": null,
+      "description": "A placement cell that disappears after graduation, YouTube advice and hundreds of cold applications. Guidance is either expensive one-on-one counselling or generic content. Nobody is accountable for the outcome.",
+      "who": "Graduates of tier-2 and tier-3 colleges, plus dropouts entering the workforce for the first time.",
+      "tags": [
+        "career",
+        "cohort",
+        "mentorship"
+      ],
+      "pitch": "A career operating system for the 18–24s who leave education without a map.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 80,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 68,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 62,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 44,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 58,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Run an eight-week cohort with a personal career map, weekly mentor sessions and one real portfolio project.",
+          "Issue employer-verified skill badges and route graduates into hiring partners with a warm introduction.",
+          "Keep alumni pods by city and role so the network survives the cohort."
+        ],
+        "mvp": [
+          "One cohort of 100",
+          "20 mentors and 10 hiring partners",
+          "WhatsApp community and outcome tracker"
+        ],
+        "model": "Cohort fee with an income-share option, employer hiring fees, college B2B contracts.",
+        "price": "₹9,999 per cohort. Colleges pay ₹1,500 per student for placement support.",
+        "gtm": "College placement cells, YouTube creators and referral loops from alumni.",
+        "moat": "Outcome data and employer trust. Thin without scale, so pick one role and own it."
+      },
+      "risks": [
+        "Crowded edtech market",
+        "Placement guarantees create refund risk",
+        "Cohort economics"
+      ],
+      "market": {
+        "tam": "1.5 crore+ graduates a year, with tier-2/3 employability as the gap",
+        "time": "4–6 months",
+        "capital": "₹20–40 lakh"
+      },
+      "verdict": "Degrees are getting cheaper to obtain and more expensive to use. Sell the bridge, not another course.",
+      "rank": 118
+    },
+    {
+      "id": "why-do-teachers-lack-real-time-mental-health-support",
+      "startup": "Chalkline",
+      "title": "Why do teachers lack real time mental health support at work?",
+      "category": "Healthcare",
+      "source": "editorial",
+      "rating": 67,
+      "prompt": null,
+      "description": "Annual wellness workshops, a helpline nobody calls, and a culture where admitting burnout looks like incompetence. Generic EAPs ignore the school context. Teachers do not trust confidentiality and schools cannot see whether the benefit works.",
+      "who": "K–12 teachers in private school chains, especially early-career teachers managing 40+ students and parent WhatsApp groups.",
+      "tags": [
+        "mental health",
+        "education",
+        "B2B2C"
+      ],
+      "pitch": "A confidential mental-health benefit built for teachers, delivered in the twenty minutes they actually have.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 76,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 62,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 74,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 70,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 48,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 54,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Offer 15-minute video or chat sessions with counsellors trained on classroom stressors, bookable in a free period.",
+          "Run anonymous burnout check-ins and give school leaders only aggregate dashboards, never individual data.",
+          "Train principals on workload triggers and provide a confidential escalation path for serious cases."
+        ],
+        "mvp": [
+          "Counsellor panel with school-specific training",
+          "WhatsApp scheduling and 15-minute slots",
+          "Aggregate wellbeing dashboard for school leaders"
+        ],
+        "model": "Per-teacher monthly fee billed to the school, with a family add-on.",
+        "price": "₹149 per teacher per month.",
+        "gtm": "School chains and teacher unions. Lead with attrition and absence data from two pilot chains.",
+        "moat": "Context-trained counsellors and school distribution. Weak alone, stronger bundled with HR benefits."
+      },
+      "risks": [
+        "School budget cycles",
+        "Confidentiality perception",
+        "Low ARPU per seat"
+      ],
+      "market": {
+        "tam": "1 crore+ school teachers in India, with private chains as the beachhead",
+        "time": "4–6 months",
+        "capital": "₹25–50 lakh"
+      },
+      "verdict": "Teacher burnout is a school retention problem wearing a wellness label. Sell it to the people who lose when teachers quit.",
+      "rank": 125
+    },
+    {
+      "id": "why-is-connecting-specialized-hardware-to-laptops-still-unreliable",
+      "startup": "PortSmith",
+      "title": "Why is connecting specialized hardware to laptops still unreliable and frustrating?",
+      "category": "Hardware",
+      "source": "editorial",
+      "rating": 64.6,
+      "prompt": null,
+      "description": "A driver CD from 2014, a forum thread, and a technician who knows the trick. Hardware vendors do not maintain drivers across OS versions, and IT teams have no device-level telemetry until something breaks.",
+      "who": "Labs, clinics, factory floors and field teams running legacy instruments on Windows, macOS and Linux.",
+      "tags": [
+        "developer tools",
+        "drivers",
+        "IT"
+      ],
+      "pitch": "A compatibility cloud that makes specialized hardware plug-and-play with any laptop.",
+      "signals": [
+        {
+          "label": "Pain",
+          "value": 70,
+          "max": 100
+        },
+        {
+          "label": "Market",
+          "value": 58,
+          "max": 100
+        },
+        {
+          "label": "Timing",
+          "value": 72,
+          "max": 100
+        },
+        {
+          "label": "Feasibility",
+          "value": 48,
+          "max": 100
+        },
+        {
+          "label": "Moat",
+          "value": 76,
+          "max": 100
+        },
+        {
+          "label": "Revenue",
+          "value": 64,
+          "max": 100
+        }
+      ],
+      "solution": {
+        "how": [
+          "Build a compatibility database keyed by vendor and product ID, with signed driver packs and firmware versions.",
+          "Provide a virtual device lab so an IT team can test an OS update before it reaches the instrument.",
+          "Ship a small diagnostics agent and a support desk with an SLA for fleet customers."
+        ],
+        "mvp": [
+          "200 device profiles",
+          "Compatibility checker installer",
+          "Paid support desk for three lab customers"
+        ],
+        "model": "Per-seat IT subscription, per-device fleet licensing, vendor certification fees.",
+        "price": "₹2,999 per seat per year. Fleet plans from ₹1 lakh/year.",
+        "gtm": "Lab-equipment resellers, IT service providers and niche hardware vendors who want happier customers.",
+        "moat": "A proprietary compatibility graph and a physical test lab. Boring, deep and hard to replicate."
+      },
+      "risks": [
+        "Long-tail device complexity",
+        "OS updates break working drivers",
+        "Niche market ceiling"
+      ],
+      "market": {
+        "tam": "Global instrument and industrial device support, with Indian labs and factories as the wedge",
+        "time": "6–9 months",
+        "capital": "₹35–60 lakh"
+      },
+      "verdict": "Nobody wants to build driver infrastructure. That is exactly why the company that does becomes the default.",
+      "rank": 131
+    }
+  ]
+}

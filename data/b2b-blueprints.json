@@ -1,0 +1,365 @@
+{
+  "note": "Platform blueprints carried from the earlier 20-problem build (B2B Services). Fixed input for scripts/build-dataset.js.",
+  "entries": [
+    {
+      "title": "Why can't SMEs negotiate favorable payment terms with large buyers?",
+      "startup": "TermSheet",
+      "pitch": "Payment-term infrastructure that gives an SME supplier the leverage of a large buyer.",
+      "who": "SME suppliers selling to large corporates on 60–120 day payment cycles.",
+      "tags": [
+        "fintech",
+        "working capital",
+        "SME"
+      ],
+      "how": [
+        "Benchmark payment terms by buyer and industry so a supplier knows what is normal before signing.",
+        "Offer buyer-backed reverse factoring: underwrite the receivable, not the SME, and settle in days for a small discount.",
+        "Automate e-invoicing, collection nudges and a dispute desk so cash does not stall on paperwork."
+      ],
+      "mvp": [
+        "Two NBFC partners and 20 buyer programmes",
+        "Term benchmark dataset",
+        "Receivable dashboard and collection flows"
+      ],
+      "model": "Factoring spread, supplier SaaS, benchmark subscription for larger suppliers.",
+      "price": "0.5–1.5% per invoice financed. ₹4,999/month for the platform.",
+      "gtm": "Industry clusters such as auto components and textiles, CA networks and large-buyer supplier programmes.",
+      "moat": "Receivable performance data by buyer plus capital partnerships. Hard to bootstrap, valuable once live.",
+      "risks": [
+        "Credit losses in a downturn",
+        "RBI compliance and licensing",
+        "Long enterprise sales cycles"
+      ],
+      "market": {
+        "tam": "₹50 lakh Cr+ in B2B receivables, with MSME working capital as the wedge",
+        "time": "9–12 months",
+        "capital": "₹2–4 Cr"
+      },
+      "verdict": "This is the highest-itch problem on the platform for a reason: cash flow is the SME's real product."
+    },
+    {
+      "title": "Why can’t manufacturers rely on guaranteed, accountable pickup logistics for outbound deliveries?",
+      "startup": "PickupPromise",
+      "pitch": "SLA-backed first-mile pickup with proof, penalties and payout on delivery.",
+      "who": "D2C brands and manufacturers shipping outbound from two or three warehouses.",
+      "tags": [
+        "logistics",
+        "SLA",
+        "manufacturing"
+      ],
+      "how": [
+        "Book pickup slots with vetted fleets and attach a penalty-backed SLA to every slot.",
+        "Capture photo, weight and condition proof at pickup, then release payment only after confirmed delivery.",
+        "Run an exception desk for damages and delays, with insurance attached to high-value loads."
+      ],
+      "mvp": [
+        "100-vehicle network in one cluster",
+        "Slot booking and proof workflow",
+        "Two anchor clients on monthly SLA"
+      ],
+      "model": "Per-pickup fee plus an SLA subscription, insurance commission.",
+      "price": "₹250–600 per pickup, ₹15,000/month for guaranteed slots.",
+      "gtm": "D2C clusters in NCR and Bengaluru, plus 3PL partnerships that lack first-mile reliability.",
+      "moat": "Reliability data and driver density. Operations discipline is the barrier.",
+      "risks": [
+        "Thin per-trip margins",
+        "Driver churn",
+        "Capex if the fleet is owned"
+      ],
+      "market": {
+        "tam": "₹20,000 Cr+ first-mile logistics spend, growing with D2C",
+        "time": "6–9 months",
+        "capital": "₹60 lakh–1 Cr"
+      },
+      "verdict": "Brands sell a delivery promise. First-mile is where that promise quietly breaks."
+    },
+    {
+      "title": "Why do factory owners wait days for industrial repair technicians?",
+      "startup": "FixNow",
+      "pitch": "Industrial repair in hours, with vetted technicians and remote diagnostics first.",
+      "who": "Factory owners and plant managers with a production line down.",
+      "tags": [
+        "industrial",
+        "marketplace",
+        "downtime"
+      ],
+      "how": [
+        "Verify technicians by machine type and skill, with a live availability calendar across industrial clusters.",
+        "Run remote video triage before dispatch, so the right technician and part arrive together.",
+        "Price on an SLA and share a downtime calculator that makes the cost of waiting explicit."
+      ],
+      "mvp": [
+        "50 verified technicians in three clusters",
+        "Dispatch desk and video triage",
+        "Spare-part partners for top 20 failure modes"
+      ],
+      "model": "Commission on jobs, annual maintenance contracts, parts margin.",
+      "price": "15–20% commission. AMCs from ₹50,000/year.",
+      "gtm": "Industrial associations, machine OEMs and plant WhatsApp groups.",
+      "moat": "Technician density and repair history by machine model. The data makes dispatch smarter.",
+      "risks": [
+        "Quality variance",
+        "Worksite safety liability",
+        "Slow digital adoption"
+      ],
+      "market": {
+        "tam": "₹25,000 Cr+ industrial maintenance and repair spend",
+        "time": "6–8 months",
+        "capital": "₹40–70 lakh"
+      },
+      "verdict": "A day of downtime can cost more than a year of the repair contract. Price the urgency, not the hour."
+    },
+    {
+      "title": "Why can't businesses verify new suppliers before purchasing?",
+      "startup": "SupplierPass",
+      "pitch": "A trust score for new suppliers, built from registries, audits and live delivery data.",
+      "who": "Procurement teams at mid-market manufacturers and D2C brands onboarding new suppliers.",
+      "tags": [
+        "procurement",
+        "verification",
+        "B2B"
+      ],
+      "how": [
+        "Pull GST, ROC, litigation and credit signals into one report with a plain-language risk score.",
+        "Add a quality audit from a vetted inspector and verified references from actual buyers.",
+        "Monitor the supplier continuously and alert the buyer when filings, ownership or delivery performance change."
+      ],
+      "mvp": [
+        "Five registry data sources",
+        "Audit partner network",
+        "Score model and 100 verified suppliers"
+      ],
+      "model": "Per-report fee, annual monitoring subscription, audit fees.",
+      "price": "₹2,999 per report. ₹25,000/year for monitoring.",
+      "gtm": "Procurement consultants, industry bodies and B2B marketplaces that need a trust layer.",
+      "moat": "Supplier graph and audit history. Every report improves the next one.",
+      "risks": [
+        "Data accuracy and stale registries",
+        "Liability for a wrong score",
+        "Audit supply in smaller clusters"
+      ],
+      "market": {
+        "tam": "₹5 lakh Cr+ in annual B2B procurement, with supplier onboarding as the entry point",
+        "time": "5–7 months",
+        "capital": "₹40–70 lakh"
+      },
+      "verdict": "Buyers already pay for due diligence with time and bad debt. Sell it as a report they can defend."
+    },
+    {
+      "title": "Why do freelancers ghost projects after partial payments without accountability systems?",
+      "startup": "EscrowWork",
+      "pitch": "Milestone escrow and dispute resolution for freelance projects, so nobody ghosts.",
+      "who": "Freelancers and small agencies working with clients they have never met.",
+      "tags": [
+        "freelancing",
+        "escrow",
+        "trust"
+      ],
+      "how": [
+        "Create milestone contracts with funded escrow before work starts, so the money exists before the deliverable.",
+        "Release funds on approval, with a structured revision window instead of endless feedback.",
+        "Provide mediation and a small-claims arbitration panel, plus portable reputation across clients."
+      ],
+      "mvp": [
+        "Escrow via a payment partner",
+        "Contract templates and milestone flow",
+        "Dispute desk and 1,000-freelancer waitlist"
+      ],
+      "model": "Escrow fee, premium contracts, arbitration fees.",
+      "price": "1.5–2.5% of escrowed value. ₹299 for a custom contract.",
+      "gtm": "Freelancer communities, agency networks and invoicing tools that already hold the relationship.",
+      "moat": "Dispute data and a portable trust graph. Regulation is a barrier and a moat.",
+      "risks": [
+        "Escrow licensing and compliance",
+        "Fraud on both sides",
+        "Low take rate"
+      ],
+      "market": {
+        "tam": "India's 1.5 crore+ freelance workforce and its unpaid-invoice problem",
+        "time": "5–7 months",
+        "capital": "₹40–60 lakh"
+      },
+      "verdict": "Both sides of a freelance deal are afraid. A neutral referee can charge both of them."
+    },
+    {
+      "title": "Why do businesses struggle finding reliable contract manufacturers for small batches?",
+      "startup": "BatchBridge",
+      "pitch": "Small-batch contract manufacturing, matched on capacity, quality and lead time.",
+      "who": "D2C brands and hardware startups needing 500–5,000 units to test a market.",
+      "tags": [
+        "manufacturing",
+        "marketplace",
+        "D2C"
+      ],
+      "how": [
+        "Map factory capacity by machine, process and open slots, then expose only genuinely available small-batch windows.",
+        "Run a design-for-manufacturing check before quoting, so the buyer does not pay for an avoidable re-tool.",
+        "Hold a quality escrow: release payment after sample approval and a third-party inspection."
+      ],
+      "mvp": [
+        "30 factories in two clusters",
+        "100 buyers and a quote workflow",
+        "Sample approval and inspection checklist"
+      ],
+      "model": "Transaction fee, DFM services, inspection fees.",
+      "price": "3–5% of order value. ₹5,000 per DFM review.",
+      "gtm": "D2C communities, accelerator cohorts and factory associations.",
+      "moat": "A factory-capacity graph with quality history. Supply is the hard side to build.",
+      "risks": [
+        "Fragmented supply base",
+        "Quality failures damage trust",
+        "Long buyer sales cycles"
+      ],
+      "market": {
+        "tam": "₹15,000 Cr+ small-batch contract manufacturing, driven by D2C",
+        "time": "7–9 months",
+        "capital": "₹50–80 lakh"
+      },
+      "verdict": "Every D2C brand starts with a batch too small for a real factory. Be the bridge they never had."
+    },
+    {
+      "title": "Why can’t small restaurants access wholesale ingredient pricing without large minimum orders?",
+      "startup": "Restock",
+      "pitch": "Wholesale ingredient buying for small restaurants, without the 100 kg minimum.",
+      "who": "Independent cafés, cloud kitchens and small restaurants buying 20–40 ingredients a week.",
+      "tags": [
+        "food supply",
+        "aggregation",
+        "SME"
+      ],
+      "how": [
+        "Pool orders across nearby kitchens to unlock wholesale prices without each kitchen meeting the MOQ.",
+        "Run a cold-chain last mile with transparent live pricing and next-morning delivery windows.",
+        "Add standing orders, credit terms and spoilage-aware forecasting so kitchens order less, more often."
+      ],
+      "mvp": [
+        "One city, 50 kitchens, 20 high-frequency SKUs",
+        "Pooled order cycle",
+        "Cold-chain partner and price feed"
+      ],
+      "model": "Product margin, delivery fee, supplier promotions.",
+      "price": "8–12% margin on pooled orders.",
+      "gtm": "Cloud-kitchen hubs, chef communities and distributor partnerships for sourcing.",
+      "moat": "Pooled demand density and spoilage data. Density is everything in perishables.",
+      "risks": [
+        "Perishable waste",
+        "Working capital",
+        "Thin margins and price wars"
+      ],
+      "market": {
+        "tam": "₹40,000 Cr+ restaurant food supply, with 1 lakh+ small kitchens",
+        "time": "7–10 months",
+        "capital": "₹80 lakh–1.5 Cr"
+      },
+      "verdict": "Small kitchens do not need cheaper food as much as they need to stop over-ordering it."
+    },
+    {
+      "title": "Why are small retailers forced into distributor margins without direct brand access?",
+      "startup": "DirectShelf",
+      "pitch": "Direct brand-to-retailer ordering with transparent margins and next-day replenishment.",
+      "who": "Neighbourhood retailers and emerging D2C brands trying to reach them.",
+      "tags": [
+        "retail",
+        "commerce",
+        "distribution"
+      ],
+      "how": [
+        "Give retailers one ordering app with brand catalogues, landed prices and transparent margins.",
+        "Aggregate last-mile delivery through existing distributors instead of duplicating their trucks.",
+        "Send sell-through data back to brands so they can plan production and targeted offers."
+      ],
+      "mvp": [
+        "200 retailers and 15 brands in one city",
+        "Ordering app with margin display",
+        "Distributor logistics partnership"
+      ],
+      "model": "Take rate on orders, brand data subscriptions, credit referral.",
+      "price": "6–10% take rate. Brand analytics from ₹10,000/month.",
+      "gtm": "Retail associations, brand sales teams and distributor partnerships.",
+      "moat": "Retailer density and brand sell-through data.",
+      "risks": [
+        "Distributor resistance",
+        "Working capital",
+        "Low gross margins"
+      ],
+      "market": {
+        "tam": "₹80 lakh Cr+ retail distribution, with 1.2 crore kirana stores",
+        "time": "8–10 months",
+        "capital": "₹1–2 Cr"
+      },
+      "verdict": "The distributor is not the enemy; the opaque margin is. Sell transparency and reliability together."
+    },
+    {
+      "title": "Why can't shops see real-time supplier stock levels?",
+      "startup": "StockSync",
+      "pitch": "Live supplier stock levels for small shops, without asking 'bhaiya, hai kya?'",
+      "who": "Kirana and specialty retailers ordering from 10–20 distributors.",
+      "tags": [
+        "retail",
+        "inventory",
+        "supply chain"
+      ],
+      "how": [
+        "Integrate with distributor POS and ERP systems to publish live availability and batch-level stock.",
+        "Let retailers order on WhatsApp with substitute suggestions when an SKU is short.",
+        "Add demand forecasting and auto-replenishment for the top 100 SKUs."
+      ],
+      "mvp": [
+        "10 distributors and 200 retailers",
+        "WhatsApp ordering with stock feed",
+        "Two POS integrations"
+      ],
+      "model": "Retailer SaaS, distributor subscription, fulfilment fee.",
+      "price": "₹499–999/month per retailer. Distributors pay for demand analytics.",
+      "gtm": "Distributor networks and retail associations in one city.",
+      "moat": "Distributor integrations are tedious and sticky. Build the boring pipe.",
+      "risks": [
+        "Distributors guard inventory data",
+        "Integration cost per distributor",
+        "Low willingness to pay"
+      ],
+      "market": {
+        "tam": "12 million+ retail outlets and their distributor networks",
+        "time": "5–7 months",
+        "capital": "₹30–50 lakh"
+      },
+      "verdict": "A stockout is a customer lost to the shop next door. Sell certainty, not software."
+    },
+    {
+      "title": "Why do micro-SMEs waste 10+ hours weekly on invoice management?",
+      "startup": "InvoicePilot",
+      "pitch": "Accounts payable on WhatsApp: capture invoices, reconcile GST and pay on time.",
+      "who": "Micro-SME owners with 1–20 employees and no dedicated finance hire.",
+      "tags": [
+        "fintech",
+        "automation",
+        "SME"
+      ],
+      "how": [
+        "Let the owner forward any invoice to a WhatsApp bot, which extracts vendor, GSTIN, amount and tax.",
+        "Validate GST details, route approvals and schedule payment against due dates.",
+        "Sync the ledger to Tally or Zoho so the CA works from clean books instead of chasing photos."
+      ],
+      "mvp": [
+        "WhatsApp bot with OCR",
+        "Three accounting integrations",
+        "100 businesses and 5 CA partners"
+      ],
+      "model": "SaaS subscription, payment float, CA partner revenue share.",
+      "price": "₹999–2,999/month.",
+      "gtm": "CA firms, GST Suvidha providers and business WhatsApp groups.",
+      "moat": "Workflow habit plus accountant distribution. Low technical moat, so speed matters.",
+      "risks": [
+        "Commoditisation by accounting suites",
+        "Payment regulation",
+        "Monthly churn among micro-SMEs"
+      ],
+      "market": {
+        "tam": "6 crore+ MSMEs, with 1 crore+ active GST filers",
+        "time": "4–6 months",
+        "capital": "₹25–45 lakh"
+      },
+      "verdict": "The best interface for a micro-SME is the one already open. Build inside WhatsApp, not beside it."
+    }
+  ]
+}

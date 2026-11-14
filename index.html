@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Itch Atlas — 143 problems from Fix My Itch, turned into startup briefs</title>
+  <meta name="description" content="Every problem on Razorpay's Fix My Itch, scraped end to end, paired with a startup blueprint, business model and risks — ranked 1 to 143." />
+  <meta name="theme-color" content="#1a1a1a" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://itch-atlas.vercel.app/" />
+  <meta property="og:title"       content="Itch Atlas — 143 startup ideas hiding in India's problems" />
+  <meta property="og:description" content="Every problem on Razorpay's Fix My Itch, scraped end to end, paired with a startup blueprint." />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Itch Atlas — 143 startup ideas hiding in India's problems" />
+  <meta name="twitter:description" content="Every problem on Razorpay's Fix My Itch, scraped end to end, paired with a startup blueprint." />
+
+  <link rel="canonical" href="https://itch-atlas.vercel.app/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1a1a'/%3E%3Crect x='18' y='18' width='10' height='10' fill='%232f55f4'/%3E%3Crect x='4' y='4' width='10' height='10' fill='%23f4f4f2'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ── NAV ── -->
+  <nav id="nav">
+    <a class="logo" href="#/" data-route="home" aria-label="Itch Atlas home">
+      <b>◢</b>Itch Atlas
+    </a>
+    <div class="nav-links">
+      <a href="#top-problems">Top Problems</a>
+      <a href="#ranked">All Problems</a>
+      <a href="#method">Method</a>
+    </div>
+    <div class="nav-search">
+      <label class="sr-only" for="search">Search problems and startups</label>
+      <input type="search" id="search" placeholder="Search…" autocomplete="off" spellcheck="false" />
+      <kbd aria-hidden="true">/</kbd>
+    </div>
+  </nav>
+
+  <main id="main">
+  <div id="home-view">
+
+    <!-- ── HERO ── -->
+    <header id="home" class="grid">
+      <!-- Scattered background stamps, rendered by JS -->
+      <div id="hero-stamps" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="sub">INDIA'S PROBLEMS · TURNED INTO STARTUP BRIEFS</p>
+        <h1 class="ti">
+          <span>ITCH</span><span class="ti-em">atlas</span>
+        </h1>
+        <p class="by">mapped by <i>rohansachinpatil</i></p>
+        <div class="ctas">
+          <a class="b primary" href="#top-problems">Show Me Top Startups</a>
+          <a class="b" href="#ranked">Nah, Show Me Everything</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── SCRATCH TO REVEAL ── -->
+    <section id="reveal" class="grid" aria-label="Scratch to reveal statistics">
+      <div class="hl" style="top:22%" aria-hidden="true"></div>
+      <div class="hl" style="top:63%" aria-hidden="true"></div>
+      <div class="mq-wrap" aria-hidden="true">
+        <div class="mq" id="mq-track"></div>
+      </div>
+      <div class="sw">
+        <div class="sw-face">
+          <canvas id="c0" aria-hidden="true"></canvas>
+          <canvas id="c1" role="img" aria-label="Scratch card — drag to reveal the data"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATS (shown after scratch or on scroll) ── -->
+    <section id="stats-row" aria-label="Dataset summary">
+      <div class="stats-inner" id="hero-stats"></div>
+    </section>
+
+    <!-- ── PILE: category stamps scatter in ── -->
+    <section id="pile" class="grid" aria-label="Browse by sector"></section>
+
+    <!-- ── TOP 10 INTERACTIVE DECK ── -->
+    <section class="pg" id="top-problems">
+      <h2>Top 10 <em>Startups</em></h2>
+      <div class="deck" id="deck" aria-label="Interactive startup card deck"></div>
+      <div class="dc" id="dc">01 / 10</div>
+      <div class="arr" aria-label="Deck navigation">
+        <button id="pv" aria-label="Previous card">←</button>
+        <button id="nx" aria-label="Next card">→</button>
+        <div class="dc-hint">DRAG, CLICK OR SWIPE CARDS</div>
+      </div>
+    </section>
+
+    <!-- ── ALL PROBLEMS LEDGER ── -->
+    <section class="pg" id="ranked">
+      <h2>All <em>Problems</em></h2>
+      <div class="chips" id="category-chips" role="group" aria-label="Filter by sector"></div>
+      <div class="row hd" aria-hidden="true">
+        <span>STARTUP / PITCH</span>
+        <span id="sort-score-btn" role="button" tabindex="0" aria-label="Sort by score">SCORE ↕</span>
+        <span>SECTOR</span>
+      </div>
+      <div class="list-status">
+        <span id="result-count" aria-live="polite"></span>
+        <span id="list-note"></span>
+      </div>
+      <ol class="brief-list" id="brief-list"></ol>
+      <div class="empty" id="empty-state" hidden>
+        <strong>Nothing matches.</strong>
+        <p>Try a shorter phrase or clear the sector filter.</p>
+        <button type="button" id="reset-filters">Clear filters</button>
+      </div>
+    </section>
+
+    <!-- ── METHOD ── -->
+    <section class="pg" id="method">
+      <h2>How it was <em>built</em></h2>
+      <div class="method-grid">
+        <div class="method-copy">
+          <p><strong>Extraction.</strong> The Fix My Itch page renders its table inside Framer and only loads one category at a time. We drove a headless browser over DevTools, clicked every one of the 16 category chips, and read each row's React record directly — title, description, itch score and all four sub-scores.</p>
+          <p><strong>Coverage.</strong> 133 platform problems across 16 categories. Ten editorial picks from Automotive, Housing, Healthcare, Career, Hardware and Consumer Services bring the total to 143.</p>
+          <p><strong>Ratings.</strong> Platform problems carry their published itch score out of 100. Editorial picks carry a weighted founder score (pain 30 %, market 20 %, timing 15 %, feasibility 15 %, moat 10 %, revenue 10 %).</p>
+          <p><strong>What is ours.</strong> Problem text and scores: Razorpay. Startup names, pitches, build plans, pricing, go-to-market, moats, risks and market notes: independent analysis on top. Not investment advice.</p>
+        </div>
+        <div class="method-notes">
+          <div class="st bl method-stamp" style="--r:-3deg">133<br/><small>PLATFORM ROWS SCRAPED</small></div>
+          <div class="st wt method-stamp" style="--r:2deg">16<br/><small>CATEGORIES COVERED</small></div>
+          <div class="st bl method-stamp" style="--r:-1deg">143<br/><small>TOTAL BRIEFS MAPPED</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SHOUTOUT ── -->
+    <section id="shoutout" class="pg">
+      <div class="shout-inner">
+        <p class="sub" style="margin-bottom:12px">BUILT &amp; SHIPPED BY</p>
+        <h2 class="shout-name">@rohansachinpatil</h2>
+        <p class="shout-desc">Scraped, structured &amp; shipped this whole atlas. Go give him a follow.</p>
+        <div class="ctas" style="justify-content:flex-start;margin-top:28px">
+          <a class="b primary" href="https://github.com/rohansachinpatil" target="_blank" rel="noopener noreferrer">
+            GitHub →
+          </a>
+          <a class="b" href="https://linkedin.com/in/rohansachinpatil" target="_blank" rel="noopener noreferrer">
+            LinkedIn →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#home-view -->
+
+  <!-- ── BRIEF DETAIL (hash-routed, hidden by default) ── -->
+  <div id="brief-view" hidden></div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="foot-left">
+      <h3>Get involved</h3>
+      <div class="ctas" style="margin-top:16px">
+        <button class="b primary" id="share-btn">Share With A Founder</button>
+      </div>
+    </div>
+    <div class="foot-right">
+      <p class="foot-legal">Problems &amp; itch scores from <a href="https://razorpay.com/m/fix-my-itch/" target="_blank" rel="noopener noreferrer">Fix My Itch</a>, a Razorpay initiative. <strong>Not affiliated with Razorpay.</strong> Startup concepts, build plans and editorial scores are independent analysis.</p>
+      <p class="foot-legal"><strong>Not investment advice.</strong> Nothing here constitutes financial advice or a solicitation to invest. Use at your own risk.</p>
+      <p class="foot-legal">No cookies · No trackers · © 2026 Rohan Sachin Patil</p>
+      <p class="foot-links">
+        <a href="https://github.com/rohansachinpatil" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/rohansachinpatil" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://razorpay.com/" target="_blank" rel="noopener noreferrer">razorpay.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite">Link Copied!</div>
+
+  <script src="data/problems.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
