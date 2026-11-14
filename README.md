@@ -1,117 +1,86 @@
-# Itch Atlas
+# FIXED your ITCH
 
-> Every problem on Razorpay's Fix My Itch, scraped end to end, turned into 143 startup briefs.
+> **India said "Fix My Itch" — so we FIXED your ITCH.**  
+> Complete startup blueprints, MVP build plans, business models & risk analysis for all 143 problems from Razorpay's Fix My Itch initiative.
 
-**Live:** [itch-atlas.vercel.app](https://itch-atlas.vercel.app) *(update after deploy)*
-
----
-
-## What it is
-
-Itch Atlas maps every problem published on [Fix My Itch](https://razorpay.com/m/fix-my-itch/) — Razorpay's public problem database — and pairs each one with a founder-readable startup brief:
-
-- Build plan (step by step)
-- First version (MVP checklist)
-- Business model, pricing, go-to-market, and moat
-- Risk factors
-- A one-line verdict
-
-**133** platform problems across 16 categories + **10** editorial picks = **143 total**, ranked by itch / founder score.
+**Live Website:** [fixed-your-itch.vercel.app](https://fixed-your-itch.vercel.app)
 
 ---
 
-## Stack
+## ⚡ Why This Exists (Fix My Itch Solved)
 
-Pure static site — zero build step, zero framework, zero server.
+On National Startup Day, Razorpay launched [Fix My Itch](https://razorpay.com/m/fix-my-itch/) — an AI-powered problem bank collecting verified complaints, frustrations and pain points from across India.
 
-| Layer | Tech |
-|-------|------|
-| Markup | HTML5 |
-| Styles | Vanilla CSS (custom properties, grid, animations) |
-| Logic | Vanilla JS (ES5-compatible IIFE) |
-| Data | Pre-built JS module (`data/problems.js`) |
-| Fonts | Google Fonts (Bricolage Grotesque, IBM Plex Mono, Instrument Sans) |
-| Hosting | Vercel (static) |
+**FIXED your ITCH** turns that wishlist into reality:
+- **133 Scraped Platform Problems** across 16 categories
+- **10 Curated Editorial Blueprints** across Automotive, Housing, Healthcare, Hardware and Career
+- **143 Total Startup Briefs**, each with:
+  1. Detailed Problem breakdown & *"Who feels it"*
+  2. Step-by-step Technical Build plan
+  3. Minimum Viable Product (MVP) features
+  4. Business model, pricing, GTM strategy & moat
+  5. Critical risks & vulnerabilities
+  6. Final Founder verdict & published itch score
 
 ---
 
-## Deploy to Vercel
+## 🚀 SEO & Discovery Strategy
 
-### One-click (recommended)
+Engineered to rank for high-intent queries around **Fix My Itch**, **Razorpay Fix My Itch**, **India startup problems**, and **Fix My Itch solutions**:
 
-1. Push this repo to GitHub / GitLab / Bitbucket.
-2. Import the repo in [vercel.com/new](https://vercel.com/new).
-3. Framework preset → **Other** (no build step needed).
-4. Click **Deploy**.
+- **Google Semantic Hierarchy**: Rich keywords embedded in semantic HTML (`<header>`, `<main>`, `<section>`, `<h1>`-`<h3>`, `<article>`).
+- **Structured Data (`schema.org`)**: Full `@graph` schema with `WebSite`, `SearchAction`, and `ItemList` indexing all problems.
+- **Dynamic XML Sitemap (`sitemap.xml`)**: Every individual problem link indexed with daily/weekly change frequency priorities.
+- **Search Engine Directive (`robots.txt`)**: Crawl allowance with explicit sitemap indexing.
+- **Social Graph Tags**: OpenGraph and Twitter Card metadata configured for viral sharing across X, LinkedIn, WhatsApp and Reddit.
 
-### Vercel CLI
+---
+
+## 🛠 Tech Stack
+
+Pure modern static stack — fast, lightweight, and zero-server:
+
+| Layer | Implementation |
+|---|---|
+| **Markup** | Semantic HTML5 with JSON-LD microdata |
+| **Styles** | Vanilla CSS (Authentic stamp masks `--m`, SVG fractal noise `--g`, full responsive grid) |
+| **Interactivity** | Vanilla JS (Draggable swipeable deck, dual-canvas scratch intro, smooth filter engine) |
+| **Data** | Structured JSON module (`data/problems.js`) |
+| **Fonts** | Google Fonts (`Archivo Black`, `Anton`, `Bebas Neue`, `IBM Plex Mono`) |
+| **Hosting** | Vercel Edge CDN |
+
+---
+
+## 📦 Deployment to Vercel
 
 ```bash
-npm i -g vercel
-vercel login
-vercel --prod
+# Push to GitHub
+git add .
+git commit -m "Deploy FIXED your ITCH to Vercel"
+git push origin master
 ```
 
-The `vercel.json` already configures:
-- Static asset caching (1 year for `assets/`, 1 day for `data/`)
-- Security headers (X-Frame-Options, X-Content-Type-Options, CSP-ready)
-- SPA-style fallback to `index.html`
+Then visit [vercel.com/new](https://vercel.com/new) and import the repository.
+- **Framework Preset**: Other
+- **Root Directory**: `./`
+- **Build Command**: None (or `node scripts/generate-sitemap.js` if updating data)
+- **Output Directory**: `.`
 
 ---
 
-## Local development
+## ⚖️ Legal & Trademark Disclaimers
 
-```bash
-# Any static file server works, e.g.:
-npx serve .
-# or
-python -m http.server 8080
-```
-
-Open `http://localhost:8080`.
-
-> **Do not** open `index.html` as a `file://` URL — the `data/problems.js` script tag will fail on some browsers due to CORS restrictions.
+- *Fix My Itch* is an initiative by Razorpay Software Pvt. Ltd. Razorpay® is a registered trademark of Razorpay Software Pvt. Ltd.
+- **FIXED your ITCH is an independent analysis and is not affiliated with, sponsored by, or endorsed by Razorpay Software Pvt. Ltd.**
+- All startup concepts, build architectures, pricing strategies, and risk assessments are original works by the author.
+- **Not investment advice.** Content is for educational and entrepreneurial research purposes only.
 
 ---
 
-## Project structure
-
-```
-├── index.html          # Single-page shell
-├── vercel.json         # Vercel deployment config
-├── assets/
-│   ├── styles.css      # All styles (dark, glitchy, responsive)
-│   └── app.js          # All behaviour (routing, filters, render)
-├── data/
-│   ├── problems.js     # Window global: window.ITCH_ATLAS
-│   ├── problems.json   # Same data as JSON (reference)
-│   ├── problems.csv    # Flat export
-│   ├── b2b-blueprints.json
-│   ├── editorial.json
-│   └── scraped.json    # Raw scrape output
-└── scripts/
-    ├── scrape.js       # Headless scraper (Node + Puppeteer)
-    ├── build-dataset.js
-    └── solutions/      # Startup blueprint source files
-```
-
----
-
-## Legal & attribution
-
-- Problem titles, descriptions, and itch scores: © Razorpay Software Pvt. Ltd. All rights reserved. Reproduced here for independent, non-commercial analysis.
-- **Razorpay®** is a registered trademark of Razorpay Software Pvt. Ltd. This project is **not affiliated with, endorsed by, or sponsored by Razorpay**.
-- Startup concepts, build plans, pricing, go-to-market, moats, risks, editorial scores, and market notes are original work by **Rohan Sachin Patil** and are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- **This site is for informational purposes only. Nothing here constitutes investment advice, financial advice, or a solicitation to invest.**
-
----
-
-## Author
+## 👤 Author & Credits
 
 **Rohan Sachin Patil**
-- GitHub: [@rohansachinpatil](https://github.com/rohansachinpatil)
-- LinkedIn: [rohansachinpatil](https://linkedin.com/in/rohansachinpatil)
-
----
+- **GitHub**: [@rohansachinpatil](https://github.com/rohansachinpatil)
+- **LinkedIn**: [rohansachinpatil](https://linkedin.com/in/rohansachinpatil)
 
 © 2026 Rohan Sachin Patil. All rights reserved.

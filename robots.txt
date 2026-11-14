@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fixed-your-itch.vercel.app/sitemap.xml

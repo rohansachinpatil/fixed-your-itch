@@ -174,22 +174,25 @@
         ctx.fillRect(0, y, w, 1);
       }
 
-      /* "ITCH ATLAS" headline */
+      /* "FIXED your ITCH" headline */
       ctx.fillStyle = "#fff";
       ctx.textAlign = "center";
-      ctx.font = "900 " + (w * .23) + "px 'Archivo Black', Anton, sans-serif";
-      ctx.fillText("ITCH", w / 2, h * .36);
-      ctx.fillText("ATLAS", w / 2, h * .57);
+      ctx.font = "900 " + (w * .16) + "px 'Archivo Black', Anton, sans-serif";
+      ctx.fillText("FIXED", w / 2, h * .34);
+      ctx.font = "italic 900 " + (w * .11) + "px 'Archivo Black', sans-serif";
+      ctx.fillText("your", w / 2, h * .47);
+      ctx.font = "900 " + (w * .18) + "px 'Archivo Black', Anton, sans-serif";
+      ctx.fillText("ITCH", w / 2, h * .63);
 
       /* Instruction */
-      ctx.font = "700 " + (w * .046) + "px Inter, sans-serif";
-      ctx.fillStyle = "rgba(255,255,255,.55)";
+      ctx.font = "700 " + (w * .044) + "px Inter, sans-serif";
+      ctx.fillStyle = "rgba(255,255,255,.75)";
       ctx.fillText("✱  SCRATCH TO REVEAL  ✱", w / 2, h * .82);
 
       /* Razorpay attribution */
       ctx.font = "500 " + (w * .033) + "px Inter, sans-serif";
-      ctx.fillStyle = "rgba(255,255,255,.3)";
-      ctx.fillText("based on Fix My Itch by Razorpay", w / 2, h * .91);
+      ctx.fillStyle = "rgba(255,255,255,.45)";
+      ctx.fillText("143 solutions for Razorpay's Fix My Itch", w / 2, h * .91);
     }
 
     /* Scratch logic */
@@ -675,7 +678,7 @@
 
     home.hidden = true;
     view.hidden = false;
-    document.title = p.startup + " — " + p.title + " | Itch Atlas";
+    document.title = p.startup + " — " + p.title + " | FIXED your ITCH (Fix My Itch Solutions)";
     window.scrollTo(0, 0);
   }
 
@@ -686,7 +689,7 @@
     view.hidden = true;
     view.innerHTML = "";
     home.hidden = false;
-    document.title = "Itch Atlas — 143 problems from Fix My Itch, turned into startup briefs";
+    document.title = "FIXED your ITCH — 143 Startup Ideas & Solutions for Razorpay's Fix My Itch";
     if (restore && returnScroll != null) {
       window.scrollTo(0, returnScroll);
       returnScroll = null;
@@ -744,7 +747,7 @@
       "", "RISKS", p.risks.map(function (r) { return "- " + r; }).join("\n"),
       "", "MARKET: " + (m.tam||"") + " · MVP: " + (m.time||"") + " · Capital: " + (m.capital||""),
       "", "VERDICT", p.verdict,
-      "", "— Itch Atlas by rohansachinpatil — https://github.com/rohansachinpatil"
+      "", "— FIXED your ITCH (Fix My Itch Solutions) by rohansachinpatil — https://github.com/rohansachinpatil"
     ].join("\n");
   }
 
