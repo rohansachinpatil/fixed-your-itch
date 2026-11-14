@@ -46,6 +46,24 @@
     </div>
   </nav>
 
+  <!-- ── INTRO SCRATCH OVERLAY (Exact Fix My Itch mechanic) ── -->
+  <div id="intro-scratch-overlay" class="intro-overlay" aria-label="Intro scratch card">
+    <div class="intro-overlay-bg"></div>
+    <div class="hl" style="top:22%" aria-hidden="true"></div>
+    <div class="hl" style="top:63%" aria-hidden="true"></div>
+    <div class="mq-wrap" aria-hidden="true">
+      <div class="mq" id="mq-track"></div>
+    </div>
+    <div class="sw">
+      <div class="sw-face">
+        <canvas id="c0" aria-hidden="true"></canvas>
+        <canvas id="c1" role="img" aria-label="Scratch to reveal Itch Atlas"></canvas>
+      </div>
+      <div class="scratch-badge">SCRATCH TO REVEAL</div>
+    </div>
+    <button type="button" class="skip-intro-btn" id="skip-intro-btn">SKIP INTRO →</button>
+  </div>
+
   <main id="main">
   <div id="home-view">
 
@@ -66,22 +84,7 @@
       </div>
     </header>
 
-    <!-- ── SCRATCH TO REVEAL ── -->
-    <section id="reveal" class="grid" aria-label="Scratch to reveal statistics">
-      <div class="hl" style="top:22%" aria-hidden="true"></div>
-      <div class="hl" style="top:63%" aria-hidden="true"></div>
-      <div class="mq-wrap" aria-hidden="true">
-        <div class="mq" id="mq-track"></div>
-      </div>
-      <div class="sw">
-        <div class="sw-face">
-          <canvas id="c0" aria-hidden="true"></canvas>
-          <canvas id="c1" role="img" aria-label="Scratch card — drag to reveal the data"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── STATS (shown after scratch or on scroll) ── -->
+    <!-- ── STATS (revealed after scratch) ── -->
     <section id="stats-row" aria-label="Dataset summary">
       <div class="stats-inner" id="hero-stats"></div>
     </section>

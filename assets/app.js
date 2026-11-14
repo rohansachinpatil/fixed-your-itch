@@ -204,21 +204,29 @@
       ctx1.fill();
     }
 
+    function dismissIntro() {
+      if (scratchDone) return;
+      scratchDone = true;
+      c1.classList.add("gone");
+      var overlay = $("#intro-scratch-overlay");
+      if (overlay) overlay.classList.add("dismissed");
+      document.body.style.overflow = "";
+
+      /* Reveal stats & animate pile after transition */
+      setTimeout(function () {
+        if (overlay) overlay.style.display = "none";
+        var pile = $("#pile");
+        if (pile && !pile.classList.contains("on")) pile.classList.add("on");
+      }, 900);
+    }
+
     function checkDone() {
-      /* Sample every 50px for performance */
+      /* Sample pixels to check percentage cleared */
       var d = ctx1.getImageData(0, 0, c1.width, c1.height).data;
       var total = 0, cleared = 0;
-      for (var i = 3; i < d.length; i += 200) { total++; if (d[i] < 50) cleared++; }
-      if (cleared / total > 0.48 && !scratchDone) {
-        scratchDone = true;
-        c1.classList.add("gone");
-        /* Reveal stats & animate pile after transition */
-        setTimeout(function () {
-          var pile = $("#pile");
-          if (pile && !pile.classList.contains("on")) pile.classList.add("on");
-          var ranked = $("#ranked");
-          if (ranked) ranked.scrollIntoView({ behavior: "smooth" });
-        }, 650);
+      for (var i = 3; i < d.length; i += 160) { total++; if (d[i] < 50) cleared++; }
+      if (cleared / total > 0.42 && !scratchDone) {
+        dismissIntro();
       }
     }
 
@@ -232,9 +240,26 @@
     c1.addEventListener("pointerup", function () { dragging = false; checkDone(); });
     c1.addEventListener("touchmove", function (e) { e.preventDefault(); scratch(e); }, { passive: false });
 
+    var skipBtn = $("#skip-intro-btn");
+    if (skipBtn) {
+      skipBtn.addEventListener("click", function () {
+        dismissIntro();
+      });
+    }
+
+    /* If user already visited or is deep-linking to a brief, skip overlay */
+    if (location.hash && location.hash.indexOf("#/brief/") === 0) {
+      var overlay = $("#intro-scratch-overlay");
+      if (overlay) overlay.style.display = "none";
+      scratchDone = true;
+    } else {
+      /* Lock body scroll during intro overlay */
+      document.body.style.overflow = "hidden";
+    }
+
     /* Paint once fonts are ready */
     document.fonts.ready.then(resize);
-    /* Also paint immediately as fallback (canvas ignores unloaded fonts gracefully) */
+    /* Also paint immediately as fallback */
     resize();
   }
 
