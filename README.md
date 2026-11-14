@@ -67,9 +67,11 @@ Or import the repo at [vercel.com/new](https://vercel.com/new) and connect it to
 
 `vercel.json` ships with the project and configures:
 
-- the SPA rewrite so `/brief/<id>` serves `index.html`,
-- long-lived caching for `robots.txt` and `sitemap.xml`,
-- security headers: a strict Content-Security-Policy, `X-Content-Type-Options`, `X-Frame-Options: DENY`, `Referrer-Policy`, `Permissions-Policy` and HSTS.
+- the SPA rewrite so `/brief/<id>` serves `index.html` (real files win first, so the legal pages are never swallowed),
+- a genuine 404 status for unknown URLs, served by `404.html`,
+- security headers on every response: a strict Content-Security-Policy, `X-Content-Type-Options`, `X-Frame-Options: DENY`, `Referrer-Policy`, `Permissions-Policy` and HSTS.
+
+Regenerate it after editing headers with `npm run build:vercel`.
 
 > Set your own domain in one place before going live: `SITE_URL` in `scripts/generate-sitemap.js` and the `og:url` / `canonical` values in `index.html` and `assets/app.js`.
 
@@ -135,6 +137,7 @@ data/b2b-blueprints.json   Fixed input: 10 reused B2B blueprints
 scripts/scrape.js          CDP scraper for the Fix My Itch table
 scripts/build-dataset.js   Merge, normalise, validate, write
 scripts/generate-sitemap.js
+scripts/build-vercel-config.js  Generates vercel.json (routes + security headers)
 scripts/serve.js           Zero-dependency static server with SPA fallback
 scripts/solutions/         The authored blueprints
 ```
