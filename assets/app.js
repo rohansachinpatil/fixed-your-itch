@@ -89,13 +89,12 @@
     /* [left%, top%, rotation, width%, class] — widths are % of the viewport so
        the stamps can never push the page wider than the screen. */
     var layout = [
-      [-8, 12, -6, 24, "gy"],
-      [80, 10, -11, 26, "dg"],
-      [-6, 78, -8, 28, "dg"],
-      [56, 84, -4, 30, "gy"],
-      [88, 54, -5, 20, "gy"],
-      [24, -12, 5, 28, "dg"],
-      [58, -10, 4, 26, "gy"]
+      [-9, 14, -6, 24, "gy"],
+      [86, 8, -11, 26, "dg"],
+      [-8, 70, -8, 28, "dg"],
+      [84, 76, -4, 30, "gy"],
+      [90, 44, -5, 20, "gy"],
+      [-10, 40, 5, 26, "dg"]
     ];
 
     wrap.innerHTML = picks.map(function (p, i) {

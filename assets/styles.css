@@ -173,7 +173,17 @@ body > nav {
 }
 
 /* Scattered background stamps — texture, not clutter: kept faint and out of
-   the reading band so the wordmark always wins. */
+   the reading band so the wordmark always wins.
+   The layer is a full-bleed box on purpose: it is the containing block for the
+   stamps, so their percentages resolve against the hero, not against a
+   zero-width wrapper (a transform on the wrapper would hijack that too). */
+#hero-stamps {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
 #hero-stamps .st {
   position: absolute;
   filter: blur(1.6px);
